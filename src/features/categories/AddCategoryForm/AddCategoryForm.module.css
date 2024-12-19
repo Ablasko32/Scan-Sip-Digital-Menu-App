@@ -1,0 +1,35 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 3rem;
+  border-radius: 5px;
+  gap: 0.7rem;
+  max-width: 80%;
+}
+
+.form input {
+  padding: 0.5rem;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.header {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  align-items: center;
+  color: blueviolet;
+}
+
+.submit {
+  padding: 1rem 4rem;
+  align-self: center;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  background-color: blueviolet;
+  text-align: center;
+  color: #fff;
+}

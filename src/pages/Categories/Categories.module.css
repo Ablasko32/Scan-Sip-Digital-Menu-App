@@ -1,0 +1,21 @@
+.categories {
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 3rem;
+}
+
+.header {
+  font-size: 2rem;
+  border-bottom: 0.5px solid blueviolet;
+}
+
+.addIcon {
+  background-color: blueviolet;
+  padding: 3px;
+  border-radius: 5px;
+}

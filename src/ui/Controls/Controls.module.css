@@ -1,0 +1,16 @@
+.controls {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  /* background-color: bisque; */
+  gap: 2rem;
+}
+
+.icon {
+  background-color: blueviolet;
+  padding: 3px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

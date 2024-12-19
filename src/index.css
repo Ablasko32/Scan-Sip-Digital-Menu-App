@@ -1,0 +1,36 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  color: #d8d4d4;
+  /* background-image: url("https://img.freepik.com/free-vector/line-luxury-gradient-color-minimalist-style-wave_483537-3945.jpg?ga=GA1.1.1126062350.1734623609&semt=ais_hybrid"); */
+  /* background-image: url("https://img.freepik.com/free-vector/gradient-particle-wave-background_23-2150517324.jpg?ga=GA1.1.1126062350.1734623609&semt=ais_hybrid");
+
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed; */
+  background-color: black;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
