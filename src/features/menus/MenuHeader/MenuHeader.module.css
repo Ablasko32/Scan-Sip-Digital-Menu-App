@@ -1,0 +1,32 @@
+.locationName {
+  font-size: 5rem;
+  opacity: 90%;
+  margin-bottom: 2px;
+}
+
+.menuInfo {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+.menuDescription {
+  margin-bottom: 1.2rem;
+  font-size: 1.2rem;
+}
+
+.menuDetails {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 3px;
+}
+
+.menuDetails li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+}

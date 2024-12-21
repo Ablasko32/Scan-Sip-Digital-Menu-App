@@ -1,25 +1,18 @@
+import MenuFooter from "../../features/menus/MenuFooter/MenuFooter";
+import MenuHeader from "../../features/menus/MenuHeader/MenuHeader";
+import MenuList from "../../features/menus/MenuList/MenuList";
 import styles from "./Menus.module.css";
 
 function Menus() {
   return (
     <div className={styles.menu}>
-      <div className={styles.menuHeader}>
-        <h1 className={styles.locationName}>Coffe name</h1>
-        <p>Description of nice coffe place to enjoj your warm stay</p>
-        <p>Adress Adress 1.1..22</p>
-        <p>Working Hours</p>
-      </div>
+      <div className={styles.menuHeader}></div>
 
-      <ul>
-        <li>Wine</li>
-        <li>Coffe</li>
-        <li>Coffe</li>
-        <li>Liquer</li>
-      </ul>
+      <MenuHeader />
 
-      <div>
-        <p>Created by Scan&Sip</p>
-      </div>
+      <MenuList />
+
+      <MenuFooter />
     </div>
   );
 }

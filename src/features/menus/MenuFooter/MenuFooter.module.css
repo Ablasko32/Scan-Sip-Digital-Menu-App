@@ -1,0 +1,17 @@
+.menuFooter {
+  text-align: center;
+  padding: 2rem 0;
+  font-size: 1.1rem;
+}
+
+.menuLogo {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: blueviolet;
+  padding-left: 2px;
+  border-bottom: 1px solid blueviolet;
+}
+
+.footerDisclaimer {
+  padding-bottom: 10px;
+}
