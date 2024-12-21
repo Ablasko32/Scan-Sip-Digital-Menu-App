@@ -1,9 +1,9 @@
 import styles from "./LoaderError.module.css";
 import { GoAlert } from "react-icons/go";
 
-function LoaderError({ ErrMessage }) {
+function LoaderError({ ErrMessage, fullScreen }) {
   return (
-    <div className={styles.error}>
+    <div className={`${styles.error} ${fullScreen && styles.fullScreen}`}>
       <p>
         {" "}
         <GoAlert />

@@ -6,17 +6,18 @@
 }
 
 .menuHeader {
-  background-image: url("https://images.unsplash.com/photo-1595187139760-5cedf9ab5850?q=80&w=1831&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  /* background-image: url("https://images.unsplash.com/photo-1595187139760-5cedf9ab5850?q=80&w=1831&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"); */
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 
   text-align: center;
   padding-top: 2rem;
+  filter: brightness(0.9);
 }
 
 .locationName {
-  font-size: 5rem;
+  font-size: 4rem;
   opacity: 90%;
   margin-bottom: 2px;
 }

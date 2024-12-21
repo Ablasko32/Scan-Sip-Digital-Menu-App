@@ -14,3 +14,8 @@
   align-items: center;
   gap: 1rem;
 }
+
+.fullScreen {
+  height: 100dvh;
+  align-items: center;
+}

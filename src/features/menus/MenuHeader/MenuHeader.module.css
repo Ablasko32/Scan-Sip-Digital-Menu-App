@@ -1,7 +1,8 @@
 .locationName {
-  font-size: 5rem;
+  font-size: 3rem;
   opacity: 90%;
-  margin-bottom: 2px;
+  margin-bottom: 0.5rem;
+  text-transform: capitalize;
 }
 
 .menuInfo {
@@ -13,7 +14,7 @@
 }
 
 .menuDescription {
-  margin-bottom: 1.2rem;
+  margin-bottom: 2rem;
   font-size: 1.2rem;
 }
 

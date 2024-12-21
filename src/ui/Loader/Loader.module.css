@@ -36,3 +36,7 @@
 }
 
 /* box-shadow: offset-x offset-y blur-radius spread-radius color inset; */
+
+.fullScreen {
+  height: 100dvh;
+}
