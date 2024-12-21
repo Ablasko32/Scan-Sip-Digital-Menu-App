@@ -1,7 +1,6 @@
 import ProfileMenu from "../../features/profile/ProfileMenu/ProfileMenu";
 import Controls from "../Controls/Controls";
 import { CgProfile } from "react-icons/cg";
-import { IoClose } from "react-icons/io5";
 import Modal from "../../ui/modal/Modal";
 import styles from "./Header.module.css";
 import { createPortal } from "react-dom";
@@ -27,7 +26,7 @@ function Header() {
           onClick={() => handleOpenModal()}
           className={styles.iconContainer}
         >
-          {isModalOpen ? <IoClose size={30} /> : <CgProfile size={30} />}
+          <CgProfile size={30} />
         </button>
       </div>
       <div className={styles.controls}>
@@ -36,7 +35,7 @@ function Header() {
       </div>
       {isModalOpen &&
         createPortal(
-          <Modal>
+          <Modal onClose={handleOpenModal}>
             <ProfileMenu />
           </Modal>,
           document.body,

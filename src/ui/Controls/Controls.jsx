@@ -25,8 +25,8 @@ function Controls() {
         <CiSettings color="#fff" size={30} />
       </button>
       {isSettingsOpen && (
-        <Modal>
-          <LocationSettings handleClose={handleOpenSettings} />
+        <Modal onClose={handleOpenSettings}>
+          <LocationSettings />
         </Modal>
       )}
     </div>

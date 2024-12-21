@@ -25,7 +25,7 @@ function Categories() {
       <CategoriesList />
       {isAddOpen &&
         createPortal(
-          <Modal>
+          <Modal onClose={handleOpenAdd}>
             <AddCategoryForm handleClose={handleOpenAdd} />
           </Modal>,
           document.body,

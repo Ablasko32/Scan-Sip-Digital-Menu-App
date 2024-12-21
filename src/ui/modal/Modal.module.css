@@ -2,7 +2,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  background-color: #ffffff21;
+  background-color: #1816161a;
   z-index: 20;
   height: 100vh;
   width: 100vw;
@@ -11,4 +11,40 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
+}
+
+.content {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  padding: 3rem;
+  padding-top: 2rem;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50%;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  transform: translateY(1000px);
+  animation: 1s entry ease-out forwards;
+}
+
+@keyframes entry {
+  0% {
+    transform: translateY(1000px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.close {
+  padding-bottom: 2rem;
+  align-self: flex-end;
+  position: absolute;
+  top: 20px;
+  right: 20px;
 }

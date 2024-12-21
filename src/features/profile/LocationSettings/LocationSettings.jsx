@@ -1,14 +1,9 @@
 import styles from "../../categories/AddCategoryForm/AddCategoryForm.module.css";
-import { CgClose } from "react-icons/cg";
-import React from "react";
 
-function LocationSettings({ handleClose }) {
+function LocationSettings() {
   return (
     <form className={styles.form}>
       <div className={styles.header}>
-        <button onClick={handleClose}>
-          <CgClose color="#fff" size={20} />
-        </button>
         <h2>Update location data</h2>
       </div>
 

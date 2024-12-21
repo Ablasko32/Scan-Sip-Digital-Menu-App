@@ -1,13 +1,9 @@
 import styles from "./AddCategoryForm.module.css";
-import { CgClose } from "react-icons/cg";
 
-function AddCategoryForm({ handleClose }) {
+function AddCategoryForm() {
   return (
     <form className={styles.form}>
       <div className={styles.header}>
-        <button onClick={handleClose}>
-          <CgClose color="#fff" size={20} />
-        </button>
         <h2>Add new category</h2>
       </div>
 

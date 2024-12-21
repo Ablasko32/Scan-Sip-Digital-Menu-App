@@ -1,11 +1,8 @@
 .form {
   display: flex;
   flex-direction: column;
-  background-color: rgba(255, 255, 255, 0.3);
-  padding: 3rem;
   border-radius: 5px;
   gap: 0.7rem;
-  max-width: 80%;
 }
 
 .form input {
@@ -15,12 +12,7 @@
 }
 
 .header {
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-between;
-  margin-bottom: 2rem;
-  align-items: center;
-  color: blueviolet;
+  text-transform: capitalize;
 }
 
 .submit {
