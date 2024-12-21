@@ -1,4 +1,5 @@
 import LocationSettings from "../../features/profile/LocationSettings/LocationSettings";
+import QrCodeButton from "../QrCodeButton/QrCodeButton";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 import { CiSettings } from "react-icons/ci";
 import styles from "./Controls.module.css";
@@ -18,6 +19,8 @@ function Controls() {
       <Link to="/menus/location/1" className={styles.icon}>
         <MdOutlineRemoveRedEye size={30} />
       </Link>
+      {/* generate qr code */}
+      <QrCodeButton />
       <button onClick={handleOpenSettings} className={styles.icon}>
         <CiSettings color="#fff" size={30} />
       </button>
