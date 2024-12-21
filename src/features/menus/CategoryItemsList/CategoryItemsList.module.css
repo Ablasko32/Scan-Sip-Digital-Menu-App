@@ -13,21 +13,28 @@
 
 .itemsList li {
   flex-shrink: 0;
+
   padding-left: 2rem;
-  border-bottom: 0.1px solid rgba(137, 43, 226, 0.15);
+  box-shadow: -6px 0 10px 1px rgba(137, 43, 226, 0.2);
   width: 100%;
   max-width: 50rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 1rem;
   font-size: 1.1rem;
   background-color: rgba(255, 255, 255, 0.06);
   border-radius: 4px;
   overflow: hidden;
+  height: 9rem;
+  border-left: 0.5px solid blueviolet;
 }
 
 .itemsList h3 {
-  font-size: 1.5rem;
+  padding-top: 2px;
+  font-size: 1.4rem;
+  margin-bottom: 4px;
+  text-transform: capitalize;
 }
 
 .itemsList p {
@@ -35,14 +42,17 @@
 }
 
 .itemImg {
-  width: 64px;
-  height: 64px;
+  width: 80px;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.9);
 }
 
 .itemPrice {
   margin-top: 1rem;
   font-size: 1.3rem;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .goToTop {
@@ -55,4 +65,9 @@
   display: flex;
   align-items: center;
   gap: 5px;
+}
+
+.itemDescription {
+  font-style: italic;
+  font-weight: 300;
 }

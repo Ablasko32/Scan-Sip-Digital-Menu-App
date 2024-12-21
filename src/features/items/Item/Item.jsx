@@ -1,20 +1,23 @@
-import categoryStyles from "../../categories/CategoryItem/CategoryItem.module.css";
+// import categoryStyles from "../../categories/CategoryItem/CategoryItem.module.css";
 import { HiDotsVertical } from "react-icons/hi";
+import styles from "./Item.module.css";
 
-function Item() {
+function Item({ item }) {
   return (
-    <li className={categoryStyles.listItem}>
-      <div>
-        <img
-          className={categoryStyles.categoryImg}
-          src="https://images.unsplash.com/photo-1634473115508-4291d758cf03?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        />
+    <li className={` ${styles.listItem}`}>
+      {item.image ? (
+        <img className={styles.categoryImg} src={item.image} />
+      ) : (
+        <div></div>
+      )}
+
+      <div className={styles.itemData}>
+        <p className={styles.itemName}>{item.name}</p>
+        <p className={styles.itemDescription}>{item.description}</p>
+        <p className={styles.itemPrice}>{item.price}€</p>
       </div>
 
-      <p>Coffe2</p>
-      <p>0,2</p>
-      <p>2€</p>
-      <p>
+      <p className={styles.itemMenu}>
         <HiDotsVertical />
       </p>
     </li>

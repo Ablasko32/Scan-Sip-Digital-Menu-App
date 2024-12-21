@@ -17,7 +17,7 @@ function MenuList() {
       {categories.map((category) => {
         return (
           <li key={category.id}>
-            <Link to="/menus/location/1/1">{category.name}</Link>
+            <Link to={`/menus/location/1/${category.id}`}>{category.name}</Link>
           </li>
         );
       })}

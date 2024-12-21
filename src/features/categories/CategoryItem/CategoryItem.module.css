@@ -26,3 +26,7 @@
   justify-self: flex-end;
   margin-right: 1rem;
 }
+
+.categoryName {
+  text-transform: capitalize;
+}

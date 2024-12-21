@@ -15,9 +15,9 @@ function CategoriesList() {
 
   return (
     <ul className={styles.categoryList}>
-      <CategoryItem />
-      <CategoryItem />
-      <CategoryItem />
+      {categories.map((category) => {
+        return <CategoryItem key={category.id} item={category} />;
+      })}
     </ul>
   );
 }
