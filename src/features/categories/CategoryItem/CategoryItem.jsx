@@ -6,13 +6,13 @@ function CategoryItem({ item }) {
   return (
     <li className={styles.listItem}>
       <Link to={`/categories/items/${item.id}`}>
-        {item.image ? (
+        {/* {item.image ? (
           <div>
             <img className={styles.categoryImg} src={item.image} />
           </div>
         ) : (
           <div></div>
-        )}
+        )} */}
 
         <p className={styles.categoryName}>{item.name}</p>
       </Link>

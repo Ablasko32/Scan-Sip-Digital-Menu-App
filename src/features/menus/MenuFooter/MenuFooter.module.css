@@ -10,6 +10,7 @@
   color: blueviolet;
   padding-left: 2px;
   border-bottom: 1px solid blueviolet;
+  text-shadow: 1px 1px 4px blueviolet;
 }
 
 .footerDisclaimer {

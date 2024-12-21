@@ -28,6 +28,7 @@
   overflow: hidden;
   height: 9rem;
   border-left: 0.5px solid blueviolet;
+  cursor: pointer;
 }
 
 .itemsList h3 {

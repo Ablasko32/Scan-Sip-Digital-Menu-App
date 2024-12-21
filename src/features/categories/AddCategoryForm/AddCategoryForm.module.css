@@ -1,18 +1,27 @@
 .form {
   display: flex;
   flex-direction: column;
+  align-items: center;
   border-radius: 5px;
-  gap: 0.7rem;
+  gap: 1rem;
+  width: 100%;
+
+  padding: 2rem;
 }
 
 .form input {
-  padding: 0.5rem;
+  font-size: 1.4rem;
+  padding: 1rem 1.2rem;
   border-radius: 4px;
   background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid blueviolet;
+  width: 100%;
 }
 
 .header {
   text-transform: capitalize;
+  margin-bottom: 0.5rem;
+  align-self: self-start;
 }
 
 .submit {
@@ -24,4 +33,6 @@
   background-color: blueviolet;
   text-align: center;
   color: #fff;
+  border-radius: 5px;
+  text-transform: capitalize;
 }

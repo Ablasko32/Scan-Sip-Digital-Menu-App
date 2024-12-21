@@ -1,3 +1,4 @@
+import clampDescription from "../../../utils/clampDescription.js";
 import LoaderError from "../../../ui/LoaderError/LoaderError";
 import useItems from "../../items/ItemsList/useItems.js";
 import styles from "./CategoryItemsList.module.css";
@@ -26,7 +27,10 @@ function CategoryItemsList({ handleScroll, onOpen }) {
             <li onClick={() => onOpen(item)} key={item.id}>
               <div>
                 <h3>{item.name}</h3>
-                <p className={styles.items}>{item.description}</p>
+                <p className={styles.items}>
+                  {" "}
+                  {clampDescription(item.description)}
+                </p>
                 <p className={styles.itemPrice}>{item.price}€</p>
               </div>
               {item.image ? (

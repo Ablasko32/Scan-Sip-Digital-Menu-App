@@ -32,8 +32,8 @@ function Items() {
 
       <ItemsList />
       {isAddOpen && (
-        <Modal>
-          <AddItemForm handleClose={handleAddOpen} />
+        <Modal onClose={handleAddOpen}>
+          <AddItemForm />
         </Modal>
       )}
     </div>

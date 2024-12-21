@@ -8,7 +8,7 @@ function AddCategoryForm() {
       </div>
 
       <input type="text" placeholder="Category name" />
-      <input type="file" accept="image/*" placeholder="Category name" />
+      {/* <input type="file" accept="image/*" placeholder="Category name" /> */}
 
       <button className={styles.submit} type="submit">
         Save

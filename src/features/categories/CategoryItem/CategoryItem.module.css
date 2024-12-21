@@ -9,6 +9,7 @@
   padding-left: 5rem;
   position: relative;
   height: 5rem;
+  border-left: 1px solid blueviolet;
 }
 
 .categoryImg {
