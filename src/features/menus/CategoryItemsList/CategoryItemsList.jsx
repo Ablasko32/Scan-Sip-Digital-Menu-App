@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 
 // import { IoChevronUp } from "react-icons/io5";
 
-function CategoryItemsList({ handleScroll }) {
+function CategoryItemsList({ handleScroll, onOpen }) {
   const { category: categoryId } = useParams();
 
   const { itemsData, itemsError, isLoadingItems } = useItems(categoryId);
@@ -23,10 +23,10 @@ function CategoryItemsList({ handleScroll }) {
       <ul className={styles.itemsList}>
         {itemsData.map((item) => {
           return (
-            <li key={item.id}>
+            <li onClick={() => onOpen(item)} key={item.id}>
               <div>
                 <h3>{item.name}</h3>
-                <p className={styles.itemDescription}>{item.description}</p>
+                <p className={styles.items}>{item.description}</p>
                 <p className={styles.itemPrice}>{item.price}€</p>
               </div>
               {item.image ? (
