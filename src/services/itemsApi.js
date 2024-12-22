@@ -11,3 +11,11 @@ export async function getAllItemsForCategory(categoryId) {
   }
   return data;
 }
+
+export async function saveNewItem(itemData) {
+  const { data, error } = await supabase.from("items").insert(itemData);
+  if (error) {
+    throw new Error("Error creating item");
+  }
+  return data;
+}

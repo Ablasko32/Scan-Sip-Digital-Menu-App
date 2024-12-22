@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   border-radius: 5px;
-  gap: 1rem;
+  gap: 2rem;
   width: 100%;
   background-color: rgb(37, 37, 37);
 
@@ -36,4 +36,21 @@
   color: #fff;
   border-radius: 5px;
   text-transform: capitalize;
+}
+
+.inputContainer {
+  width: 100%;
+}
+
+.form input[type="file"] {
+  display: none;
+}
+
+.fileLabel {
+  align-self: flex-start;
+  background-color: blueviolet;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 1.3rem;
 }

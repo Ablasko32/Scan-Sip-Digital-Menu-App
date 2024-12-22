@@ -13,7 +13,15 @@ function LocationSettings() {
         <input type="text" placeholder="Address" />
         <input type="text" placeholder="Description" />
         <input type="text" placeholder="Working Hours" />
-        <input type="file" accept="image/*" placeholder="Working Hours" />
+        <label className={styles.fileLabel} htmlFor="fileImage">
+          Upload image
+        </label>
+        <input
+          id="fileImage"
+          type="file"
+          accept="image/*"
+          placeholder="Working Hours"
+        />
 
         <button className={styles.submit} type="submit">
           Save
