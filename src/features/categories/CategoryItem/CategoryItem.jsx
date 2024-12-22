@@ -1,3 +1,4 @@
+import getClickLocation from "../../../utils/getClickLocation.js";
 import DropDownMenu from "../../../ui/DropDownMenu/DropDownMenu";
 import { HiDotsVertical } from "react-icons/hi";
 import styles from "./CategoryItem.module.css";
@@ -10,15 +11,9 @@ function CategoryItem({ item }) {
   const [clickLocation, setClickLocation] = useState({ x: 0, y: 0 });
 
   function handleOpenMenu(e) {
-    const rect = e.target.closest("button").getBoundingClientRect();
-    console.log(rect);
     setClickLocation(() => {
-      return {
-        x: window.innerWidth - rect.width - rect.x - rect.width / 1.4,
-        y: rect.y + rect.height - rect.height / 1.1,
-      };
+      return getClickLocation(e);
     });
-    console.log("open");
     setMenuOpen((prev) => !prev);
   }
 
@@ -45,6 +40,8 @@ function CategoryItem({ item }) {
       {isMenuOpen &&
         createPortal(
           <DropDownMenu
+            type="categories"
+            itemID={item.id}
             onClose={handleCloseMenu}
             clickLocation={clickLocation}
           />,

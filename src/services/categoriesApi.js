@@ -18,3 +18,15 @@ export async function addNewCategory(categoryData) {
 
   return data;
 }
+
+export async function deleteCategory(categoryID) {
+  console.log("ID", categoryID);
+  const { error } = await supabase
+    .from("categories")
+    .delete()
+    .eq("id", categoryID);
+  if (error) {
+    throw new Error("Error deleting category");
+  }
+  return;
+}

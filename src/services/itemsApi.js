@@ -52,3 +52,12 @@ export async function saveNewItem(itemData) {
   }
   return data;
 }
+
+export async function deleteItem(itemID) {
+  console.log("im here");
+  const { error } = await supabase.from("items").delete().eq("id", itemID);
+  if (error) {
+    throw new Error("Error deleting item");
+  }
+  return;
+}

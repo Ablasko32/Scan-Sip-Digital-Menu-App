@@ -17,7 +17,7 @@ function AddCategoryForm({ onClose }) {
     if (errors.length) {
       console.error(errors);
     }
-    console.log(data);
+    // console.log(data);
     createCategory(data);
     onClose();
   }
