@@ -1,0 +1,107 @@
+.card {
+  height: 30rem;
+  background-color: transparent;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  z-index: 100;
+  max-width: 40rem;
+}
+
+.cardTop {
+  background-color: rgba(137, 43, 226, 0.2);
+  height: 30%;
+  border-top-right-radius: 20px;
+  position: relative;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  border: 0.8px solid rgba(255, 255, 255, 0.1);
+}
+
+.cardTop h3 {
+  font-size: 1.8rem;
+}
+
+.cardTop p {
+  font-size: 1.2rem;
+  margin-top: 0.2rem;
+  font-weight: 300;
+}
+
+.cardBottom {
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 0.8px solid blueviolet;
+  flex-grow: 1;
+  position: relative;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  border-bottom-left-radius: 20px;
+  backdrop-filter: blur(10px);
+  animation: 0.8s show ease-out;
+
+  max-height: 100%;
+}
+
+@keyframes show {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.loginForm {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.loginForm input {
+  color: #fff;
+  font-size: 1.6rem;
+  padding: 1rem 1rem;
+  background-color: transparent;
+  border: 1px solid rgba(137, 43, 226, 0.5);
+
+  border-radius: 5px;
+}
+.submit {
+  padding: 1rem 4rem;
+  align-self: center;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  background-color: rgba(137, 43, 226, 0.3);
+  text-align: center;
+  color: #fff;
+  border-radius: 5px;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.inputContainer label {
+  font-size: 1.1rem;
+}
+
+.icons {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}

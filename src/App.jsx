@@ -17,6 +17,7 @@ import { Toaster } from "react-hot-toast";
 import { GoAlert } from "react-icons/go";
 import Items from "./pages/Items/Items";
 import Menus from "./pages/Menus/Menus";
+import Login from "./pages/Login/Login";
 
 function App() {
   const queryClient = new QueryClient();
@@ -25,6 +26,7 @@ function App() {
     <QueryProvider client={queryClient}>
       <Router>
         <Routes>
+          <Route path="/login" element={<Login />} />
           <Route element={<AppLayout />}>
             <Route index element={<Navigate to="/categories" />} />
             <Route path="/categories" element={<Categories />} />
@@ -58,6 +60,7 @@ function App() {
           },
         }}
       />
+
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryProvider>
   );

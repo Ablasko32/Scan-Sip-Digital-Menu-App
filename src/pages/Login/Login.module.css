@@ -1,0 +1,15 @@
+.loginContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100dvh;
+}
+
+.loginContainer::after {
+  content: "";
+  height: 100dvh;
+  width: 2rem;
+  position: fixed;
+  background-color: blueviolet;
+  filter: blur(35px);
+}
