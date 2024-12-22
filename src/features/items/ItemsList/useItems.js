@@ -7,7 +7,7 @@ export default function useItems(categoryID) {
     error: itemsError,
     isPending: isLoadingItems,
   } = useQuery({
-    queryKey: ["items"],
+    queryKey: ["items", categoryID],
     queryFn: () => getAllItemsForCategory(categoryID),
   });
   return { itemsData, itemsError, isLoadingItems };

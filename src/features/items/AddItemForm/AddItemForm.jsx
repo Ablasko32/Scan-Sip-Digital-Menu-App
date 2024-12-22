@@ -19,8 +19,8 @@ function AddItemForm({ onClose }) {
 
   function onSubmit(data) {
     if (!data) return;
-    const createdItem = { ...data, categoryId: id };
-    // console.log(createdItem);
+    const createdItem = { ...data, categoryId: id, image: data.image[0] };
+    // console.log(createdItem.image[0]);
     addNewItem(createdItem);
     onClose();
   }
@@ -74,6 +74,7 @@ function AddItemForm({ onClose }) {
         type="file"
         accept="image/*"
         placeholder="Category name"
+        {...register("image")}
       />
 
       <button disabled={isAddingItem} className={styles.submit} type="submit">
