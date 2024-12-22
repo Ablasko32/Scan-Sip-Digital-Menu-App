@@ -29,7 +29,7 @@
   position: fixed;
   bottom: 0;
   transform: translateY(1000px);
-  animation: 1s entry ease-out forwards;
+  animation: 0.7s entry ease-out forwards;
 }
 
 @keyframes entry {

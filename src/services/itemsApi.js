@@ -20,7 +20,7 @@ export async function saveNewItem(itemData) {
   const image = itemData.image;
   const imageName = itemData.image.name;
 
-  const newName = `${crypto.randomUUID()}-${imageName}`;
+  const newName = `${Date.now()}-${imageName}`;
 
   // urlPath thats going to be stored to database
   const urlPath = baseURL + newName;
