@@ -11,7 +11,7 @@ function CategoriesList() {
 
   if (categoriesError)
     return <LoaderError ErrMessage={categoriesError.message} />;
-  console.log(categories);
+  // console.log(categories);
 
   return (
     <ul className={styles.categoryList}>

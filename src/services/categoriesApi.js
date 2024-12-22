@@ -7,3 +7,14 @@ export async function getAllCategories() {
   }
   return data;
 }
+
+export async function addNewCategory(categoryData) {
+  const { data, error } = await supabase
+    .from("categories")
+    .insert(categoryData);
+  if (error) {
+    throw new Error("Error creating category");
+  }
+
+  return data;
+}

@@ -1,6 +1,7 @@
 import { IoClose } from "react-icons/io5";
 import { useEffect, useRef } from "react";
 import styles from "./Modal.module.css";
+import React from "react";
 
 function Modal({ children, onClose }) {
   const modalRef = useRef();
@@ -24,7 +25,8 @@ function Modal({ children, onClose }) {
         <button onClick={onClose} className={styles.close}>
           <IoClose color="#fff" size={30} />
         </button>
-        <div>{children}</div>
+        {/* adds onClose prop to children to close modal after mutation */}
+        <div>{React.cloneElement(children, { onClose })}</div>
       </div>
     </div>
   );
