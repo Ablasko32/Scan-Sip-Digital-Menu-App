@@ -1,6 +1,5 @@
-import { LiaCocktailSolid, LiaCoffeeSolid } from "react-icons/lia";
+import formatPrice from "../../../utils/formatPrice.js";
 import styles from "./MenuItemView.module.css";
-import { CiBeerMugFull } from "react-icons/ci";
 
 function MenuItemView({ item }) {
   console.log(item);
@@ -19,7 +18,7 @@ function MenuItemView({ item }) {
         {" "}
         <h3>{item.name}</h3>
         <p className={styles.description}>{item.description}</p>
-        <p className={styles.price}>{item.price}€</p>
+        <p className={styles.price}>{formatPrice(item.price)}</p>
       </div>
     </div>
   );

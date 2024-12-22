@@ -1,6 +1,7 @@
 import clampDescription from "../../../utils/clampDescription.js";
 import LoaderError from "../../../ui/LoaderError/LoaderError";
 import useItems from "../../items/ItemsList/useItems.js";
+import formatPrice from "../../../utils/formatPrice.js";
 import styles from "./CategoryItemsList.module.css";
 import Loader from "../../../ui/Loader/Loader";
 import { useParams } from "react-router-dom";
@@ -31,7 +32,7 @@ function CategoryItemsList({ handleScroll, onOpen }) {
                   {" "}
                   {clampDescription(item.description)}
                 </p>
-                <p className={styles.itemPrice}>{item.price}€</p>
+                <p className={styles.itemPrice}>{formatPrice(item.price)}</p>
               </div>
               {item.image ? (
                 <img className={styles.itemImg} src={item.image} />

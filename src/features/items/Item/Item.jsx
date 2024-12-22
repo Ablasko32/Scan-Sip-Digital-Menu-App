@@ -1,4 +1,5 @@
 // import categoryStyles from "../../categories/CategoryItem/CategoryItem.module.css";
+import formatPrice from "../../../utils/formatPrice.js";
 import { HiDotsVertical } from "react-icons/hi";
 import styles from "./Item.module.css";
 
@@ -14,7 +15,7 @@ function Item({ item }) {
       <div className={styles.itemData}>
         <p className={styles.itemName}>{item.name}</p>
         <p className={styles.itemDescription}>{item.description}</p>
-        <p className={styles.itemPrice}>{item.price}€</p>
+        <p className={styles.itemPrice}>{formatPrice(item.price)}</p>
       </div>
 
       <p className={styles.itemMenu}>
