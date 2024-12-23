@@ -30,6 +30,9 @@
   bottom: 0;
   transform: translateY(1000px);
   animation: 0.7s entry ease-out forwards;
+  z-index: 50;
+  overflow-y: scroll;
+  padding-bottom: 10rem;
 }
 
 @keyframes entry {

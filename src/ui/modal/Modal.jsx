@@ -7,6 +7,8 @@ function Modal({ children, onClose }) {
   const modalRef = useRef();
 
   useEffect(() => {
+    document.body.style.overflow = "hidden";
+
     function closeModal(e) {
       e.stopPropagation();
       if (e.target === modalRef.current) {
@@ -16,7 +18,10 @@ function Modal({ children, onClose }) {
 
     document.addEventListener("click", closeModal);
 
-    return () => document.removeEventListener("click", closeModal);
+    return () => {
+      document.removeEventListener("click", closeModal);
+      document.body.style.overflow = "auto";
+    };
   }, [modalRef, onClose]);
 
   return (

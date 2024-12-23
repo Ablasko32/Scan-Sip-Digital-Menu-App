@@ -41,7 +41,10 @@ function Controls() {
       </button>
       {isSettingsOpen && (
         <Modal onClose={handleOpenSettings}>
-          <LocationSettings />
+          <LocationSettings
+            onClose={handleOpenSettings}
+            locationData={locationData}
+          />
         </Modal>
       )}
     </div>
