@@ -1,12 +1,12 @@
 import useUserLocationAndCategories from "../useUserLocationAndCategories.js";
 import LoaderError from "../../../ui/LoaderError/LoaderError";
-import { useAuthContext } from "../../auth/AuthContext.jsx";
 import CategoryItem from "../CategoryItem/CategoryItem";
+import useGetUser from "../../auth/useGetUser.js";
 import styles from "./CategoriesList.module.css";
 import Loader from "../../../ui/Loader/Loader";
 
 function CategoriesList() {
-  const { userID } = useAuthContext();
+  const { userID } = useGetUser();
   // console.log(userID);
 
   // moram dobiti lokaciju

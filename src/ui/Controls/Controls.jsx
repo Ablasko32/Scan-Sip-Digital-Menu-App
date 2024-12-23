@@ -1,6 +1,6 @@
 import useUserLocationAndCategories from "../../features/categories/useUserLocationAndCategories.js";
 import LocationSettings from "../../features/profile/LocationSettings/LocationSettings";
-import { useAuthContext } from "../../features/auth/AuthContext";
+import useGetUser from "../../features/auth/useGetUser.js";
 import QrCodeButton from "../QrCodeButton/QrCodeButton";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 import { CiSettings } from "react-icons/ci";
@@ -16,7 +16,7 @@ function Controls() {
     setSettingsOpen((prev) => !prev);
   }
 
-  const { userID } = useAuthContext();
+  const { userID } = useGetUser();
 
   const { data: locationData, isPending: isLoadingLocation } =
     useUserLocationAndCategories(userID);

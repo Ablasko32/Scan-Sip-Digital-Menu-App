@@ -1,8 +1,8 @@
 import useUserLocationAndCategories from "../useUserLocationAndCategories";
 import FormError from "../../../ui/FormError/FormError";
-import { useAuthContext } from "../../auth/AuthContext";
 import useAddNewCategory from "../useAddNewCategory";
 import styles from "./AddCategoryForm.module.css";
+import useGetUser from "../../auth/useGetUser";
 import { useForm } from "react-hook-form";
 
 function AddCategoryForm({ onClose }) {
@@ -12,7 +12,7 @@ function AddCategoryForm({ onClose }) {
     formState: { errors },
   } = useForm();
 
-  const { userID } = useAuthContext();
+  const { userID } = useGetUser();
   const { data: locationData } = useUserLocationAndCategories(userID);
   const { isCreatingCategory, createCategory } = useAddNewCategory(
     locationData.id,

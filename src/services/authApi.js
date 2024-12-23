@@ -21,3 +21,13 @@ export async function logoutUser() {
   }
   return;
 }
+
+export async function getUser() {
+  // tryes to get session,if session then gets user
+  const { data: session } = await supabase.auth.getSession();
+  if (!session.session) return null;
+
+  const { data: user } = await supabase.auth.getUser();
+
+  return user;
+}
