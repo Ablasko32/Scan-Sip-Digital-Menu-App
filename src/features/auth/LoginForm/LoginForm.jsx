@@ -4,6 +4,7 @@ import { LiaCocktailSolid } from "react-icons/lia";
 import { CiBeerMugFull } from "react-icons/ci";
 import styles from "./LoginForm.module.css";
 import { useForm } from "react-hook-form";
+import useLogin from "../useLogin";
 
 function LoginForm() {
   const {
@@ -12,8 +13,12 @@ function LoginForm() {
     formState: { errors },
   } = useForm();
 
+  const { isLoggingIn, login } = useLogin();
+
   function onSubmit(data) {
-    console.log(data);
+    // console.log(data);
+    // console.log(data);
+    login(data);
   }
 
   return (
@@ -35,6 +40,7 @@ function LoginForm() {
             <input
               id="email"
               type="text"
+              autoComplete="email"
               {...register("email", { required: "Email is required" })}
             />
             {errors?.email && <FormError errMessage={errors.email.message} />}
@@ -51,7 +57,9 @@ function LoginForm() {
             )}
           </div>
 
-          <button className={styles.submit}>Login</button>
+          <button disabled={isLoggingIn} className={styles.submit}>
+            Login
+          </button>
         </form>
       </div>
     </div>

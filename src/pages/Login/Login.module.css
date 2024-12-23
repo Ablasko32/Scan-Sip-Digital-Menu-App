@@ -10,6 +10,39 @@
   height: 100dvh;
   width: 2rem;
   position: fixed;
-  background-color: blueviolet;
+  background-color: rgba(137, 43, 226, 0.6);
   filter: blur(35px);
+  animation:
+    20s swing ease-in-out infinite,
+    20s glow ease-in-out infinite;
+}
+
+@keyframes swing {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+
+  40% {
+    transform: rotate(45deg);
+  }
+
+  80% {
+    transform: rotate(-45deg);
+  }
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    filter: blur(35px);
+  }
+
+  40% {
+    filter: blur(40px);
+  }
+
+  80% {
+    filter: blur(45px);
+  }
 }

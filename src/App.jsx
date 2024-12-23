@@ -8,6 +8,7 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
+import ProtectedRoute from "./features/auth/ProtectedRoute/ProtectedRoute";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import Categories from "./pages/Categories/Categories";
 import MenuItems from "./pages/MenuItems/MenuItems";
@@ -27,7 +28,13 @@ function App() {
       <Router>
         <Routes>
           <Route path="/login" element={<Login />} />
-          <Route element={<AppLayout />}>
+          <Route
+            element={
+              <ProtectedRoute>
+                <AppLayout />
+              </ProtectedRoute>
+            }
+          >
             <Route index element={<Navigate to="/categories" />} />
             <Route path="/categories" element={<Categories />} />
             <Route path="/categories/items/:id" element={<Items />} />

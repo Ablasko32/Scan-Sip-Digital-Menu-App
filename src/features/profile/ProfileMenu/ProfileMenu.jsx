@@ -4,6 +4,7 @@ import {
 } from "react-icons/md";
 import { CiLogout, CiTrash } from "react-icons/ci";
 import styles from "./ProfileMenu.module.css";
+import Logout from "../../auth/Logout/Logout";
 
 function ProfileMenu() {
   return (
@@ -17,10 +18,7 @@ function ProfileMenu() {
         <MdOutlineModeEditOutline size={20} color="#fff" />
         <span>Location</span>
       </li>
-      <li>
-        <CiLogout size={20} color="#fff" />
-        <span>Logout</span>
-      </li>
+      <Logout />
       <li className={styles.delete}>
         <CiTrash />
         <span>Delete</span>
