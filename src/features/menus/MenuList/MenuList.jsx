@@ -1,11 +1,14 @@
 import useCategories from "../../categories/CategoriesList/useCategories";
 import LoaderError from "../../../ui/LoaderError/LoaderError";
+import { Link, useParams } from "react-router-dom";
 import Loader from "../../../ui/Loader/Loader";
 import styles from "./MenuList.module.css";
-import { Link } from "react-router-dom";
 
 function MenuList() {
-  const { categories, categoriesError, isLoadingCategories } = useCategories();
+  const { id: locationId } = useParams();
+
+  const { categories, categoriesError, isLoadingCategories } =
+    useCategories(locationId);
 
   if (isLoadingCategories) return <Loader />;
 

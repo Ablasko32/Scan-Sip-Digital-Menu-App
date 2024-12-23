@@ -1,7 +1,10 @@
 import supabase from "./supabaseClient.js";
 
-export async function getAllCategories() {
-  const { data, error } = await supabase.from("categories").select("*");
+export async function getAllCategories(locationId) {
+  const { data, error } = await supabase
+    .from("categories")
+    .select("*")
+    .eq("locationId", locationId);
   if (error) {
     throw new Error("Error loading categories");
   }

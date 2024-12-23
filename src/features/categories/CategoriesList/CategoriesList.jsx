@@ -1,25 +1,51 @@
+import useUserLocationAndCategories from "../useUserLocationAndCategories.js";
 import LoaderError from "../../../ui/LoaderError/LoaderError";
 import { useAuthContext } from "../../auth/AuthContext.jsx";
 import CategoryItem from "../CategoryItem/CategoryItem";
 import styles from "./CategoriesList.module.css";
 import Loader from "../../../ui/Loader/Loader";
-import useCategories from "./useCategories.js";
 
 function CategoriesList() {
   const { userID } = useAuthContext();
-  console.log(userID);
+  // console.log(userID);
 
-  const { categories, categoriesError, isLoadingCategories } = useCategories();
+  // moram dobiti lokaciju
 
-  if (isLoadingCategories) return <Loader />;
+  const {
+    data: locationData,
+    isPending: isLoadingLocation,
+    error: locationError,
+  } = useUserLocationAndCategories(userID);
 
-  if (categoriesError)
-    return <LoaderError ErrMessage={categoriesError.message} />;
+  // console.log(locationData);
+
+  // const {
+  //   data: locationData,
+  //   error: locationError,
+  //   isPending: isLoadingLocation,
+  // } = useQuery({
+  //   queryKey: ["userLocation"],
+  //   queryFn: async () => await getLocationDataForUser(userID),
+  // });
+  // console.log(locationData, locationError, isLoadingLocation);
+
+  // const locationId = locationData?.id;
+
+  // kategorije na temelju lokacije dobivam
+  // const { categories, categoriesError, isLoadingCategories } =
+  //   useCategories(locationId);
+
+  if (isLoadingLocation) return <Loader />;
+
+  if (!locationData)
+    return <LoaderError ErrMessage="Start by creating your location" />;
+
+  if (locationError) return <LoaderError ErrMessage={locationError.message} />;
   // console.log(categories);
 
   return (
     <ul className={styles.categoryList}>
-      {categories.map((category) => {
+      {locationData.categories.map((category) => {
         return <CategoryItem key={category.id} item={category} />;
       })}
     </ul>
