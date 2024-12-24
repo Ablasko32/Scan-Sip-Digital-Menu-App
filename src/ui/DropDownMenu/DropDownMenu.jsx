@@ -1,11 +1,11 @@
 import useDeleteCategory from "../../features/categories/useDeleteCategory";
 import useDeleteItem from "../../features/items/useDeleteItem";
 import { IoClose, IoTrashOutline } from "react-icons/io5";
+import { useEffect, useRef, useState } from "react";
 import styles from "./DropDownMenu.module.css";
-import { useEffect, useRef } from "react";
 import { FiEdit2 } from "react-icons/fi";
 
-function DropDownMenu({ clickLocation, onClose, itemID, type }) {
+function DropDownMenu({ clickLocation, onClose, itemID, type, editFunction }) {
   // const [menuPosition, setMenuPosition] = useState({ x: 0, y: 0 });
 
   // one of two mutations happens based on type prop
@@ -30,13 +30,20 @@ function DropDownMenu({ clickLocation, onClose, itemID, type }) {
     type === "items" ? deleteItem(itemID) : deleteCategory(itemID);
   }
 
+  function handleOpenEdit() {
+    editFunction();
+    onClose();
+
+    console.log("EDIT CLICKED");
+  }
+
   return (
     <div
       ref={menuRef}
       className={styles.container}
       style={{ top: `${clickLocation.y}px`, right: `${clickLocation.x}px` }}
     >
-      <button>
+      <button onClick={handleOpenEdit}>
         <FiEdit2 size={17} />
       </button>
       <button

@@ -1,16 +1,25 @@
 // import categoryStyles from "../../categories/CategoryItem/CategoryItem.module.css";
 import DropDownMenu from "../../../ui/DropDownMenu/DropDownMenu.jsx";
 import getClickLocation from "../../../utils/getClickLocation.js";
+import AddItemForm from "../AddItemForm/AddItemForm.jsx";
 import formatPrice from "../../../utils/formatPrice.js";
+import Modal from "../../../ui/modal/Modal.jsx";
 import { HiDotsVertical } from "react-icons/hi";
+import { createPortal } from "react-dom";
 import styles from "./Item.module.css";
 import { useState } from "react";
 
 function Item({ item }) {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [clickLocation, setClickLocation] = useState({ x: 0, y: 0 });
+  const [isEditOpen, setEditOpen] = useState(false);
+
+  function handleOpenEdit() {
+    setEditOpen((prev) => !prev);
+  }
 
   function handleOpenMenu(e) {
+    // console.log(item);
     setClickLocation(() => {
       return getClickLocation(e);
     });
@@ -40,12 +49,20 @@ function Item({ item }) {
       </button>
       {isMenuOpen && (
         <DropDownMenu
+          editFunction={handleOpenEdit}
           type="items"
           itemID={item.id}
           onClose={handleCloseMenu}
           clickLocation={clickLocation}
         />
       )}
+      {isEditOpen &&
+        createPortal(
+          <Modal onClose={handleOpenEdit}>
+            <AddItemForm />
+          </Modal>,
+          document.body,
+        )}
     </li>
   );
 }

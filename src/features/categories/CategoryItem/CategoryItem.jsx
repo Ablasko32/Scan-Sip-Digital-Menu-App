@@ -1,5 +1,7 @@
+import AddCategoryForm from "../AddCategoryForm/AddCategoryForm.jsx";
 import getClickLocation from "../../../utils/getClickLocation.js";
 import DropDownMenu from "../../../ui/DropDownMenu/DropDownMenu";
+import Modal from "../../../ui/modal/Modal.jsx";
 import { HiDotsVertical } from "react-icons/hi";
 import styles from "./CategoryItem.module.css";
 import { createPortal } from "react-dom";
@@ -9,6 +11,12 @@ import { useState } from "react";
 function CategoryItem({ item }) {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [clickLocation, setClickLocation] = useState({ x: 0, y: 0 });
+
+  const [isEditOpen, setEditOpen] = useState(false);
+
+  function handleOpenEdit() {
+    setEditOpen((prev) => !prev);
+  }
 
   function handleOpenMenu(e) {
     setClickLocation(() => {
@@ -24,14 +32,6 @@ function CategoryItem({ item }) {
   return (
     <li className={styles.listItem}>
       <Link to={`/categories/items/${item.id}`}>
-        {/* {item.image ? (
-          <div>
-            <img className={styles.categoryImg} src={item.image} />
-          </div>
-        ) : (
-          <div></div>
-        )} */}
-
         <p className={styles.categoryName}>{item.name}</p>
       </Link>
       <button onClick={handleOpenMenu} className={styles.categoryMenu}>
@@ -40,11 +40,19 @@ function CategoryItem({ item }) {
       {isMenuOpen &&
         createPortal(
           <DropDownMenu
+            editFunction={handleOpenEdit}
             type="categories"
             itemID={item.id}
             onClose={handleCloseMenu}
             clickLocation={clickLocation}
           />,
+          document.body,
+        )}
+      {isEditOpen &&
+        createPortal(
+          <Modal onClose={handleOpenEdit}>
+            <AddCategoryForm />
+          </Modal>,
           document.body,
         )}
     </li>
