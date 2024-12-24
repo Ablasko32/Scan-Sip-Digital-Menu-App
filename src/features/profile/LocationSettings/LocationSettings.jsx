@@ -1,9 +1,8 @@
 import styles from "../../categories/AddCategoryForm/AddCategoryForm.module.css";
-import { updateLocation } from "../../../services/locationsApi";
+import useSaveLocationSettings from "../useSaveLocationSettings";
 import FormError from "../../../ui/FormError/FormError";
-import { useMutation } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
-import toast from "react-hot-toast";
+
 // import styles from "./LocationSettings.module.css";
 
 function LocationSettings({ locationData, onClose }) {
@@ -23,21 +22,12 @@ function LocationSettings({ locationData, onClose }) {
     defaultValues: { name, description, workingHours, address },
   });
 
-  const { isPending, mutate } = useMutation({
-    mutationFn: (locationID, locationData) =>
-      updateLocation(locationID, locationData),
-    onSuccess: () => {
-      toast.success("Location updated");
-      onClose();
-    },
-    onError: (error) => {
-      toast.error(error.message);
-    },
-  });
+  const { isSavingSettings, saveSettings } = useSaveLocationSettings();
 
   function onSubmit(data) {
     // console.log("DATA HERE:", data);
-    mutate({ id: locationID, data: data });
+    saveSettings({ id: locationID, data: data });
+    onClose();
   }
 
   return (
@@ -56,7 +46,12 @@ function LocationSettings({ locationData, onClose }) {
           {errors?.name && <FormError errMessage={errors.name.message} />}
         </div>
 
-        <input defaultValue={address} type="text" placeholder="Address" />
+        <input
+          type="text"
+          placeholder="Address"
+          {...register("address", { required: "Address is required" })}
+        />
+        {errors?.address && <FormError errMessage={errors.address.message} />}
         {/* MUST GO TO TEXT AREA !!! */}
         <div>
           {" "}
@@ -95,7 +90,11 @@ function LocationSettings({ locationData, onClose }) {
           accept="image/*"
         />
 
-        <button disabled={isPending} className={styles.submit} type="submit">
+        <button
+          disabled={isSavingSettings}
+          className={styles.submit}
+          type="submit"
+        >
           Save
         </button>
       </form>

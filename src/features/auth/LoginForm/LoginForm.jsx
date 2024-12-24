@@ -57,7 +57,11 @@ function LoginForm() {
             )}
           </div>
 
-          <button disabled={isLoggingIn} className={styles.submit}>
+          <button
+            type="submit"
+            disabled={isLoggingIn}
+            className={styles.submit}
+          >
             Login
           </button>
         </form>
