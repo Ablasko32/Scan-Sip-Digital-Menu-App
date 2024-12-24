@@ -1,4 +1,4 @@
-import { uploadImage } from "./imageApi";
+import { deleteImage, uploadImage } from "./imageApi";
 import supabase from "./supabaseClient";
 
 export async function getLocationData(locationID) {
@@ -45,6 +45,18 @@ export async function getLocationUserAndCategory(userId) {
   return data;
 }
 
+export async function getLocationImageByID(locationID) {
+  const { data: fetchLocationData, error: locationError } = await supabase
+    .from("location")
+    .select("image")
+    .eq("id", locationID)
+    .single();
+  if (locationError) {
+    throw new Error("Error geting location data");
+  }
+  return { fetchLocationData, locationError };
+}
+
 export async function updateLocation(updateData) {
   const locationID = updateData.id;
   const locationData = updateData.data;
@@ -56,6 +68,20 @@ export async function updateLocation(updateData) {
 
   if (isUploading) {
     console.log("UPLOADING IMAGE");
+
+    // fetch location image data so it can be deleted later
+    const { fetchLocationData, locationError } =
+      await getLocationImageByID(locationID);
+
+    if (locationError) {
+      throw new Error("Error updating location");
+    }
+
+    // if there is locationData image then proced to delete it since new is stored
+    if (fetchLocationData.image) {
+      const imagePath = fetchLocationData.image.split("/locations/")[1].trim();
+      await deleteImage("locations", imagePath);
+    }
 
     // image extraction from formdata
     const image = locationData.image[0];

@@ -24,3 +24,15 @@ export async function uploadImage(bucket, image, maxSizeMB, maxWidthOrHeight) {
   // returns data & error
   return { imgData, imgError, urlPath };
 }
+
+export async function deleteImage(bucket, imagePath) {
+  // deletes image with provided bucket name,and image
+  const { data, error } = await supabase.storage
+    .from(bucket)
+    .remove([imagePath]);
+  if (error) {
+    throw new Error("Error deleting image");
+  }
+  // console.log("delete image data", data);
+  return { data, error };
+}
