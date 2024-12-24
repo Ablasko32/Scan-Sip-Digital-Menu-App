@@ -19,7 +19,7 @@ function AddItemForm({ onClose }) {
 
   function onSubmit(data) {
     if (!data) return;
-    const createdItem = { ...data, categoryId: id, image: data.image[0] };
+    const createdItem = { ...data, categoryId: id };
     // console.log(createdItem.image[0]);
     addNewItem(createdItem);
     onClose();

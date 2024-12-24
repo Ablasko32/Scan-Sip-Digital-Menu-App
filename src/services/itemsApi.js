@@ -1,4 +1,4 @@
-import imageCompression from "browser-image-compression";
+import { uploadImage } from "./imageApi";
 import supabase from "./supabaseClient";
 
 export async function getAllItemsForCategory(categoryId) {
@@ -13,44 +13,46 @@ export async function getAllItemsForCategory(categoryId) {
   return data;
 }
 
-export async function saveNewItem(itemData) {
-  // path creation for image
-  const baseURL =
-    "https://ksyctoiguomeuiavrbpf.supabase.co/storage/v1/object/public/items/";
-  const image = itemData.image;
-  const imageName = itemData.image.name;
-
-  const newName = `${Date.now()}-${imageName}`;
-
-  // urlPath thats going to be stored to database
-  const urlPath = baseURL + newName;
-
-  // image compression
-  const options = {
-    maxSizeMB: 0.2,
-    maxWidthOrHeight: 200,
-    useWebWorker: true,
-  };
-  const commpresedImage = await imageCompression(image, options);
-
-  // image uploading
-  const { data: imgData, error: imgError } = await supabase.storage
-    .from("items")
-    .upload(newName, commpresedImage);
-  // console.log("data", imgData);
-  // if no image upload then no content upload and error out
-  if (imgError || !imgData) {
-    throw new Error("Error uploading image");
-  }
-
-  // uploading of item with path given by us
+export async function insertNewItemHelper(rawData, image = null) {
   const { data, error } = await supabase
     .from("items")
-    .insert({ ...itemData, image: urlPath });
+    .insert({ ...rawData, image: image });
   if (error) {
     throw new Error("Error creating item");
   }
-  return data;
+  return { data, error };
+}
+
+export async function saveNewItem(itemData) {
+  // check to see if is uploading
+  const isUploading = itemData.image.length !== 0;
+
+  if (isUploading) {
+    const image = itemData.image[0];
+    const { imgData, imgError, urlPath } = await uploadImage(
+      "items",
+      image,
+      0.2,
+      200,
+    );
+
+    // if error error out
+    if (imgError || !imgData) {
+      throw new Error("Error uploading image");
+    }
+    const { data, error } = await insertNewItemHelper(itemData, urlPath);
+    if (error) {
+      throw new Error("Error creating item");
+    }
+    return data;
+  } else {
+    // console.log("NOT UPLOADING");
+    const { data, error } = await insertNewItemHelper(itemData);
+    if (error) {
+      throw new Error("Error creating item");
+    }
+    return data;
+  }
 }
 
 export async function deleteItem(itemID) {
