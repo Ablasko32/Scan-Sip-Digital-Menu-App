@@ -59,7 +59,7 @@ function Item({ item }) {
       {isEditOpen &&
         createPortal(
           <Modal onClose={handleOpenEdit}>
-            <AddItemForm />
+            <AddItemForm item={item} />
           </Modal>,
           document.body,
         )}

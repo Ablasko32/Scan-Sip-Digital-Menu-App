@@ -89,3 +89,63 @@ export async function deleteItem(itemID) {
     throw new Error("Error deleting item");
   }
 }
+
+export async function updateItem(updateData) {
+  const itemID = updateData.itemID;
+  const rawData = updateData.data;
+  console.log("ITEM UPDATE DATA", itemID, rawData);
+
+  // IS UPLOADING NEW IMAGE?
+  const isUploadingImage = rawData.image.length !== 0;
+  // console.log("IS UPLOADING", isUploadingImage);
+  if (!isUploadingImage) {
+    const { data: itemData } = await getItemById(itemID);
+    const imagePath = itemData.image;
+
+    const { data, error } = await supabase
+      .from("items")
+      .update({ ...rawData, image: imagePath })
+      .eq("id", itemID)
+      .select();
+    if (error) {
+      throw new Error("Error updating item");
+    }
+    return data;
+  } else {
+    // HERE USER IS UPLOADING NEW IMAGE
+    const image = rawData.image[0];
+    // console.log(image);
+    // geting data and deleting image
+    const { data: itemData } = await getItemById(itemID);
+
+    const imagePath = itemData.image.split("/items/")[1].trim();
+
+    await deleteImage("items", imagePath);
+
+    // UPLOADING NEW IMAGE
+    const { imgData, imgError, urlPath } = await uploadImage(
+      "items",
+      image,
+      0.2,
+      200,
+    );
+
+    if (imgError || !imgData) {
+      throw new Error("Error uploading image");
+    }
+
+    // UPDATE DATA FINALLY
+    const { data, error } = await supabase
+      .from("items")
+      .update({ ...rawData, image: urlPath })
+      .eq("id", itemID)
+      .select();
+
+    // console.log(data);
+    if (error) {
+      throw new Error("Error updating item");
+    }
+
+    return data;
+  }
+}

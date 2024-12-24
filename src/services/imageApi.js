@@ -33,6 +33,6 @@ export async function deleteImage(bucket, imagePath) {
   if (error) {
     throw new Error("Error deleting image");
   }
-  // console.log("delete image data", data);
+  // console.log("delete image data", data, error);
   return { data, error };
 }
