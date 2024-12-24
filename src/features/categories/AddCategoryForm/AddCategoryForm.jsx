@@ -45,7 +45,7 @@ function AddCategoryForm({ onClose, item = null }) {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
       <div className={styles.header}>
-        <h2>Add new category</h2>
+        <h2>{isEditSession ? "Edit category data" : "Add new category"}</h2>
       </div>
 
       <input
