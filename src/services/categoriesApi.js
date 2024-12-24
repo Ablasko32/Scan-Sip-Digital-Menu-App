@@ -33,3 +33,18 @@ export async function deleteCategory(categoryID) {
   }
   return;
 }
+
+export async function updateCategory(updateData) {
+  const categoryID = updateData.categoryID;
+  const categoryData = updateData.data;
+
+  const { data, error } = await supabase
+    .from("categories")
+    .update(categoryData)
+    .eq("id", categoryID)
+    .select();
+  if (error) {
+    throw new Error("Error updating category");
+  }
+  return data;
+}

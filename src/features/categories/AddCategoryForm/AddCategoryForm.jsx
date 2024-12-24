@@ -1,11 +1,16 @@
 import useUserLocationAndCategories from "../useUserLocationAndCategories";
 import FormError from "../../../ui/FormError/FormError";
 import useAddNewCategory from "../useAddNewCategory";
+import useUpdateCategory from "../useUpdateCategory";
 import styles from "./AddCategoryForm.module.css";
 import useGetUser from "../../auth/useGetUser";
 import { useForm } from "react-hook-form";
 
-function AddCategoryForm({ onClose }) {
+function AddCategoryForm({ onClose, item = null }) {
+  // CHECK IS EDIT SESSION OR ADD SESSION
+  const isEditSession = item !== null; //if edit true
+  // console.log(isEditSession, item);
+
   const {
     register,
     handleSubmit,
@@ -18,13 +23,22 @@ function AddCategoryForm({ onClose }) {
     locationData.id,
   );
 
+  // if edit session is going zo be used
+  const { isUpdatingCategory, updateCategoryMutation } = useUpdateCategory();
+
   function onSubmit(data) {
     if (!data) return;
     if (errors.length) {
       console.error(errors);
     }
     // console.log(data);
-    createCategory(data);
+    // IF NOT EDIT
+    if (!isEditSession) {
+      createCategory(data);
+    } else {
+      updateCategoryMutation({ data: data, categoryID: item.id });
+    }
+
     onClose();
   }
 
@@ -35,6 +49,7 @@ function AddCategoryForm({ onClose }) {
       </div>
 
       <input
+        defaultValue={item?.name}
         type="text"
         placeholder="Category name"
         {...register("name", {
@@ -48,7 +63,7 @@ function AddCategoryForm({ onClose }) {
       {/* <input type="file" accept="image/*" placeholder="Category name" /> */}
 
       <button
-        disabled={isCreatingCategory}
+        disabled={isCreatingCategory || isUpdatingCategory}
         type="submit"
         className={styles.submit}
       >

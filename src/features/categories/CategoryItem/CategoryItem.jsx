@@ -51,7 +51,7 @@ function CategoryItem({ item }) {
       {isEditOpen &&
         createPortal(
           <Modal onClose={handleOpenEdit}>
-            <AddCategoryForm />
+            <AddCategoryForm item={item} />
           </Modal>,
           document.body,
         )}
