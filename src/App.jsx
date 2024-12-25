@@ -10,6 +10,7 @@ import {
 } from "react-router-dom";
 import ProtectedRoute from "./features/auth/ProtectedRoute/ProtectedRoute";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import StartingWizard from "./pages/StartingWizard/StartingWizard";
 import Categories from "./pages/Categories/Categories";
 import MenuItems from "./pages/MenuItems/MenuItems";
 import AppLayout from "./ui/AppLayout/AppLayout";
@@ -36,6 +37,7 @@ function App() {
             }
           >
             <Route index element={<Navigate to="/categories" />} />
+            <Route path="/setup-wizard" element={<StartingWizard />} />
             <Route path="/categories" element={<Categories />} />
             <Route path="/categories/items/:id" element={<Items />} />
           </Route>

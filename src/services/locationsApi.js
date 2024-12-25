@@ -37,6 +37,7 @@ export async function getLocationUserAndCategory(userId) {
     .select("*,categories(*)")
     .eq("userId", userId)
     .single();
+  if (!data) return null;
   if (error) {
     if (error.code === "PGRST116") return null;
     throw new Error("Error loading location data");
@@ -133,4 +134,33 @@ export async function updateLocation(updateData) {
 
     return data;
   }
+}
+
+export async function addNewLocation(locationData) {
+  // console.log("LOCATION DATA", locationData);
+
+  const image = locationData.image[0];
+
+  const { imgData, imgError, urlPath } = await uploadImage(
+    "locations",
+    image,
+    0.8,
+    1500,
+  );
+
+  if (!imgData || imgError) {
+    throw new Error("Error uploading image");
+  }
+
+  const { data, error } = await supabase
+    .from("location")
+    .insert({ ...locationData, image: urlPath })
+    .select()
+    .single(); //placeholder for image
+  if (error) {
+    throw new Error("Error creating location");
+  }
+  // console.log("CREATED DATA", data);
+
+  return data;
 }
