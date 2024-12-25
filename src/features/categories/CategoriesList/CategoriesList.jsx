@@ -17,12 +17,14 @@ function CategoriesList() {
     error: locationError,
   } = useUserLocationAndCategories(userID);
 
+  console.log("LOCATION DATA", locationData);
+
   if (isLoadingLocation) return <Loader />;
 
   if (locationData === null && !isLoadingLocation) {
-    console.log("IM HERE", locationData, isLoadingLocation);
     return <Navigate to="/setup-wizard" />;
   }
+  console.log(locationData.categories);
 
   if (locationError) return <LoaderError ErrMessage={locationError.message} />;
   if (locationData.categories.length === 0)

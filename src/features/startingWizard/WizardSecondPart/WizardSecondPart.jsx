@@ -1,6 +1,13 @@
 import styles from "../../../pages/StartingWizard/StartingWizard.module.css";
+import FormError from "../../../ui/FormError/FormError";
+import { useFormContext } from "react-hook-form";
 
-function WizardSecondPart({ register }) {
+function WizardSecondPart() {
+  const {
+    register,
+    formState: { errors },
+  } = useFormContext();
+
   return (
     <>
       {" "}
@@ -9,11 +16,15 @@ function WizardSecondPart({ register }) {
           Your work hours
         </label>
         <input
+          autoFocus
           id="workHours"
           type="text"
           placeholder="MON-FRI 8-23, SAT-10-03, SUN-CLOSED"
           {...register("workingHours", { required: "Work Hours are required" })}
         />
+        {errors?.workingHours && (
+          <FormError errMessage={errors.workingHours.message} />
+        )}
       </div>
       <div className={styles.inputContainer}>
         <label className={styles.fileLabel} htmlFor="address">
@@ -25,6 +36,7 @@ function WizardSecondPart({ register }) {
           placeholder="Addres example"
           {...register("address", { required: "Address is required" })}
         />
+        {errors?.address && <FormError errMessage={errors.address.message} />}
       </div>
       <div className={styles.inputContainer}>
         <label className={styles.fileLabel} htmlFor="description">
@@ -36,6 +48,9 @@ function WizardSecondPart({ register }) {
           placeholder="A fresh new place in town...etc"
           {...register("description", { required: "Description is required" })}
         />
+        {errors?.description && (
+          <FormError errMessage={errors.description.message} />
+        )}
       </div>
     </>
   );

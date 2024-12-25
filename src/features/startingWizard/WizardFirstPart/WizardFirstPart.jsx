@@ -1,6 +1,13 @@
 import styles from "../../../pages/StartingWizard/StartingWizard.module.css";
+import FormError from "../../../ui/FormError/FormError";
+import { useFormContext } from "react-hook-form";
 
-function WizardFirstPart({ register }) {
+function WizardFirstPart() {
+  const {
+    register,
+    formState: { errors },
+  } = useFormContext();
+
   return (
     <>
       {" "}
@@ -9,23 +16,35 @@ function WizardFirstPart({ register }) {
           Start by giving us location name
         </label>
         <input
+          autoFocus
           id="name"
           type="text"
           placeholder="Coffe Example"
-          {...register("name")}
+          {...register("name", { required: "Name is required" })}
+        />
+        {errors?.name && <FormError errMessage={errors.name.message} />}
+      </div>
+      <div>
+        {" "}
+        <div>
+          <label className={styles.imageLabel} htmlFor="fileImage">
+            Upload image
+          </label>
+          {errors?.image && <FormError errMessage={errors.image.message} />}
+        </div>
+        <input
+          style={{ display: "none" }}
+          id="fileImage"
+          type="file"
+          accept="image/*"
+          placeholder="Category name"
+          {...register("image", {
+            validate: (file) => {
+              if (file.length === 0) return "Image is required";
+            },
+          })}
         />
       </div>
-      <label className={styles.imageLabel} htmlFor="fileImage">
-        Upload image
-      </label>
-      <input
-        style={{ display: "none" }}
-        id="fileImage"
-        type="file"
-        accept="image/*"
-        placeholder="Category name"
-        {...register("image", { required: "Cover photo is required" })}
-      />
     </>
   );
 }

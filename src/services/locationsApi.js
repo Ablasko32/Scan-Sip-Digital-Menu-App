@@ -38,8 +38,9 @@ export async function getLocationUserAndCategory(userId) {
     .eq("userId", userId)
     .single();
   if (!data) return null;
+  console.log("DATA;ERROR", data, error);
   if (error) {
-    if (error.code === "PGRST116") return null;
+    // if (error.code === "PGRST116") return null;
     throw new Error("Error loading location data");
   }
 
