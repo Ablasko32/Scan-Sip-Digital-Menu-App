@@ -23,6 +23,7 @@ function WizardFirstPart() {
           {...register("name", { required: "Name is required" })}
         />
         {errors?.name && <FormError errMessage={errors.name.message} />}
+        {errors?.image && <FormError errMessage={errors.image.message} />}
       </div>
       <div>
         {" "}
@@ -30,7 +31,6 @@ function WizardFirstPart() {
           <label className={styles.imageLabel} htmlFor="fileImage">
             Upload image
           </label>
-          {errors?.image && <FormError errMessage={errors.image.message} />}
         </div>
         <input
           style={{ display: "none" }}
