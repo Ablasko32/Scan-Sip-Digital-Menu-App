@@ -1,4 +1,4 @@
-.container {
+.itemViewContainer {
   background-color: rgba(0, 0, 0, 0.7);
   width: 100%;
   height: auto;
@@ -9,18 +9,18 @@
   min-width: 30rem;
 }
 
-.image {
+.itemViewImage {
   height: 200px;
   width: 40%;
   object-fit: cover;
 }
 
-.container h3 {
+.itemViewContainer h3 {
   text-transform: capitalize;
   font-size: 1.6rem;
 }
 
-.container div {
+.itemViewContainer div {
   padding-top: 4rem;
   padding-right: 1rem;
   display: flex;
@@ -28,13 +28,13 @@
   align-items: start;
 }
 
-.description {
+.itemViewDescription {
   font-style: italic;
   margin-bottom: auto;
   margin-top: 3px;
 }
 
-.price {
+.itemViewPrice {
   align-self: flex-end;
   margin-bottom: 2rem;
   font-size: 1.2rem;

@@ -1,9 +1,10 @@
 import CategoryItemsList from "../../features/menus/CategoryItemsList/CategoryItemsList";
 import MenuItemView from "../../features/menus/MenuItemView/MenuItemView";
 import MenuFooter from "../../features/menus/MenuFooter/MenuFooter";
+import useThemePicker from "../Menus/useThemePicker";
 import { IoChevronBack } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
-import styles from "./MenuItems.module.css";
+// import styles from "./MenuItems.module.css";
 import Modal from "../../ui/modal/Modal";
 import { useRef, useState } from "react";
 
@@ -33,11 +34,13 @@ function MenuItems() {
     setViewedItem(item);
   }
 
+  const styles = useThemePicker();
+
   return (
     <div ref={topRef} className={styles.container}>
       <div>
         <button className={styles.backButton} onClick={() => navigate(-1)}>
-          <IoChevronBack size={30} color="#fff" />
+          <IoChevronBack size={30} color="#fff" className={styles.backIcon} />
         </button>
       </div>
 

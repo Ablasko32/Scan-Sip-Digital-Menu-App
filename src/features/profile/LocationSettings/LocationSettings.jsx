@@ -79,6 +79,13 @@ function LocationSettings({ locationData, onClose }) {
             <FormError errMessage={errors.description.workingHours} />
           )}
         </div>
+        {/* MENU THEME */}
+        <div className={styles.inputContainer}>
+          <select {...register("theme")}>
+            <option value="neonPurple">Neon purple</option>
+            <option value="whiteMinimalism">White minimalism</option>
+          </select>
+        </div>
 
         <label className={styles.fileLabel} htmlFor="fileImage">
           Upload image

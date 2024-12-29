@@ -1,8 +1,9 @@
+import useThemePicker from "../../../pages/Menus/useThemePicker.js";
 import clampDescription from "../../../utils/clampDescription.js";
 import LoaderError from "../../../ui/LoaderError/LoaderError";
 import useItems from "../../items/ItemsList/useItems.js";
 import formatPrice from "../../../utils/formatPrice.js";
-import styles from "./CategoryItemsList.module.css";
+// import styles from "./CategoryItemsList.module.css";
 import Loader from "../../../ui/Loader/Loader";
 import { useParams } from "react-router-dom";
 
@@ -13,6 +14,8 @@ function CategoryItemsList({ handleScroll, onOpen }) {
 
   const { itemsData, itemsError, isLoadingItems } = useItems(categoryId);
 
+  const styles = useThemePicker();
+
   if (isLoadingItems) return <Loader />;
 
   if (itemsError) return <LoaderError ErrMessage={itemsError.message} />;
@@ -22,7 +25,7 @@ function CategoryItemsList({ handleScroll, onOpen }) {
 
   return (
     <>
-      <ul className={styles.itemsList}>
+      <ul className={styles.categoryItemsList}>
         {itemsData.map((item) => {
           return (
             <li onClick={() => onOpen(item)} key={item.id}>
@@ -42,138 +45,6 @@ function CategoryItemsList({ handleScroll, onOpen }) {
             </li>
           );
         })}
-        {/* <li>
-          <div>
-            <h3>Name of Product</h3>
-            <p>Quantity or description of product</p>
-            <p className={styles.itemPrice}>6.46€</p>
-          </div>
-
-          <img
-            className={styles.itemImg}
-            src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1738&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          />
-        </li>
-        <li>
-          <div>
-            <h3>Name of Product</h3>
-            <p>Quantity or description of product</p>
-            <p className={styles.itemPrice}>6.46€</p>
-          </div>
-
-          <img
-            className={styles.itemImg}
-            src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1738&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          />
-        </li>
-        <li>
-          <div>
-            <h3>Name of Product</h3>
-            <p>Quantity or description of product</p>
-            <p className={styles.itemPrice}>6.46€</p>
-          </div>
-
-          <img
-            className={styles.itemImg}
-            src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1738&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          />
-        </li>
-        <li>
-          <div>
-            <h3>Name of Product</h3>
-            <p>Quantity or description of product</p>
-            <p className={styles.itemPrice}>6.46€</p>
-          </div>
-
-          <img
-            className={styles.itemImg}
-            src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1738&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          />
-        </li>
-        <li>
-          <div>
-            <h3>Name of Product</h3>
-            <p>Quantity or description of product</p>
-            <p className={styles.itemPrice}>6.46€</p>
-          </div>
-
-          <img
-            className={styles.itemImg}
-            src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1738&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          />
-        </li>
-        <li>
-          <div>
-            <h3>Name of Product</h3>
-            <p>Quantity or description of product</p>
-            <p className={styles.itemPrice}>6.46€</p>
-          </div>
-
-          <img
-            className={styles.itemImg}
-            src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1738&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          />
-        </li>
-        <li>
-          <div>
-            <h3>Name of Product</h3>
-            <p>Quantity or description of product</p>
-            <p className={styles.itemPrice}>6.46€</p>
-          </div>
-
-          <img
-            className={styles.itemImg}
-            src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1738&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          />
-        </li>
-        <li>
-          <div>
-            <h3>Name of Product</h3>
-            <p>Quantity or description of product</p>
-            <p className={styles.itemPrice}>6.46€</p>
-          </div>
-
-          <img
-            className={styles.itemImg}
-            src="https://images.unsplash.com/photo-1446321423766-c339f030bd0a?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          />
-        </li>
-        <li>
-          <div>
-            <h3>Name of Product</h3>
-            <p>Quantity or description of product</p>
-            <p className={styles.itemPrice}>6.46€</p>
-          </div>
-
-          <img
-            className={styles.itemImg}
-            src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1738&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          />
-        </li>
-        <li>
-          <div>
-            <h3>Name of Product</h3>
-            <p>Quantity or description of product</p>
-            <p className={styles.itemPrice}>6.46€</p>
-          </div>
-
-          <img
-            className={styles.itemImg}
-            src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1738&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          />
-        </li>
-        <li>
-          <div>
-            <h3>Name of Product</h3>
-            <p>Quantity or description of product</p>
-            <p className={styles.itemPrice}>6.46€</p>
-          </div>
-
-          <img
-            className={styles.itemImg}
-            src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1738&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          />
-        </li> */}
       </ul>
       {/* <button onClick={handleScroll} className={styles.goToTop}>
         <span>Back to Top</span> <IoChevronUp />
