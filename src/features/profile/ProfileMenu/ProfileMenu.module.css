@@ -8,7 +8,8 @@
   align-items: center;
 }
 
-.profileMenu li {
+.profileMenu li,
+.profileMenu li a {
   gap: 10px;
   display: flex;
   align-items: center;

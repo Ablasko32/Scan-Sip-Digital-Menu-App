@@ -1,10 +1,10 @@
 import useUserLocationAndCategories from "../../features/categories/useUserLocationAndCategories.js";
-import LocationSettings from "../../features/profile/LocationSettings/LocationSettings";
 import {
   LiaCocktailSolid,
   LiaCoffeeSolid,
   LiaPizzaSliceSolid,
 } from "react-icons/lia";
+import LocationSettings from "../../features/profile/LocationSettings/LocationSettings";
 import useGetUser from "../../features/auth/useGetUser.js";
 import { CiBeerMugFull, CiSettings } from "react-icons/ci";
 import QrCodeButton from "../QrCodeButton/QrCodeButton";
@@ -39,7 +39,7 @@ function Controls() {
   return (
     <div className={styles.controls}>
       <Link
-        to={`/menus/location/${locationData?.id || "demo"}`}
+        to={`/menus/location/${locationData?.id || "1"}`}
         className={styles.icon}
       >
         <MdOutlineRemoveRedEye size={30} color="rgba(255, 255, 255, 0.87)" />

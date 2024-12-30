@@ -51,3 +51,13 @@
   background-color: var(--background-elevation-six);
   box-shadow: 4px 4px 8px 0px var(--shadow-subtle);
 }
+
+/* info details */
+
+.infoDescription {
+  color: var(--text-color-secondary);
+}
+
+.infoContainer p {
+  color: var(--text-color-secondary);
+}

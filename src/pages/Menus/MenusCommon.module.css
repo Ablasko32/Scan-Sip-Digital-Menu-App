@@ -3,6 +3,7 @@
   grid-template-rows: 25% 20% 1fr auto;
   height: 100dvh;
   gap: 2rem;
+  position: relative;
 }
 
 .menuHeader {
@@ -16,20 +17,24 @@
 }
 
 .locationName {
-  font-size: 4rem;
+  font-size: 3rem;
   opacity: 90%;
-  margin-bottom: 2px;
+  margin-bottom: 0.5rem;
+  text-transform: capitalize;
 }
 
 .menuInfo {
   padding-left: 1rem;
+  padding-right: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: start;
+  cursor: pointer;
+  position: relative;
 }
 
 .menuDescription {
-  margin-bottom: 1.2rem;
+  margin-bottom: 2rem;
   font-size: 1.2rem;
 }
 
@@ -38,6 +43,13 @@
   flex-direction: column;
   align-items: start;
   gap: 3px;
+}
+
+.menuDetails li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.4rem;
 }
 
 /* MENU ITEMS */
@@ -154,7 +166,7 @@
   top: 0;
   left: 0;
   background-color: #1816161a;
-  z-index: 20;
+  z-index: 100;
   height: 100vh;
   width: 100vw;
   backdrop-filter: blur(5px);
@@ -250,4 +262,28 @@
 .disclaimer {
   font-size: 1.4rem;
   line-height: 1.5;
+}
+
+/* POP UP DETAILS */
+.popUpDetailsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  font-size: 1.6rem;
+}
+
+.infoContainer {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.infoDescription {
+  margin-bottom: 3rem;
+}
+
+.infoIcon {
+  color: var(--text-color-primary);
+  font-size: 2rem;
+  stroke-width: 0.7px;
 }
