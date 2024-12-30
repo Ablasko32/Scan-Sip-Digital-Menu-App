@@ -49,4 +49,5 @@
 /* POP UP ITEM STYLES */
 .itemViewContainer {
   background-color: var(--background-elevation-six);
+  box-shadow: 4px 4px 8px 0px var(--shadow-subtle);
 }

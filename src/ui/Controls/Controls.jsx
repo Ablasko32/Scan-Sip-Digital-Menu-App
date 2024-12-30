@@ -1,9 +1,14 @@
 import useUserLocationAndCategories from "../../features/categories/useUserLocationAndCategories.js";
 import LocationSettings from "../../features/profile/LocationSettings/LocationSettings";
+import {
+  LiaCocktailSolid,
+  LiaCoffeeSolid,
+  LiaPizzaSliceSolid,
+} from "react-icons/lia";
 import useGetUser from "../../features/auth/useGetUser.js";
+import { CiBeerMugFull, CiSettings } from "react-icons/ci";
 import QrCodeButton from "../QrCodeButton/QrCodeButton";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
-import { CiSettings } from "react-icons/ci";
 import styles from "./Controls.module.css";
 import { Link } from "react-router-dom";
 import Modal from "../modal/Modal";
@@ -22,7 +27,14 @@ function Controls() {
     useUserLocationAndCategories(userID);
 
   if (!locationData)
-    return <p style={{ textAlign: "center" }}>Lets create your menu!</p>;
+    return (
+      <div className={styles.icons}>
+        <LiaCocktailSolid className={styles.iconSvg} />
+        <CiBeerMugFull className={styles.iconSvg} />
+        <LiaCoffeeSolid className={styles.iconSvg} />
+        <LiaPizzaSliceSolid className={styles.iconSvg} />
+      </div>
+    );
 
   return (
     <div className={styles.controls}>

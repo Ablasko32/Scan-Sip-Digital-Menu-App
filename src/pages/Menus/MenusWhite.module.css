@@ -1,32 +1,30 @@
 @import "./MenusCommon.module.css";
 
-.menu {
-  background-image: url("https://images.unsplash.com/photo-1615800098779-1be32e60cca3?q=80&w=1910&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
-  color: #000;
-}
-
 /* MENU ITEMS */
-.container {
-  background-image: url("https://images.unsplash.com/photo-1615800098779-1be32e60cca3?q=80&w=1910&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
-  color: #000;
+.container,
+.menu,
+.content {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.25)),
+    url("https://images.unsplash.com/photo-1615800098779-1be32e60cca3?q=80&w=1910&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  color: rgba(0, 0, 0, 0.8);
 }
 
 /* MENU INDIVIDUAL ITEMS CATEGORY */
 .backIcon {
-  stroke: black;
+  stroke: rgba(0, 0, 0, 0.8);
 }
 
 .menuList li {
   box-shadow:
-    inset 3px 3px 5px 0px rgba(0, 0, 0, 0.1),
-    3px 3px 7px 0px rgba(255, 255, 255, 0.4);
+    inset 3px 3px 5px 0px rgba(0, 0, 0, 0.07),
+    3px 3px 7px 0px rgba(255, 255, 255, 0.2);
   transition: all 0.3;
 }
 
 .menuList li:hover {
   box-shadow:
-    inset 5px 5px 5px 0px rgba(0, 0, 0, 0.15),
-    4px 4px 7px 0px rgba(255, 255, 255, 0.5);
+    inset 5px 5px 5px 0px rgba(0, 0, 0, 0.1),
+    4px 4px 7px 0px rgba(255, 255, 255, 0.4);
 }
 
 /* CATEGORY INDIVIDUAL ITEM */
@@ -38,15 +36,17 @@
 .categoryItemsList li {
   background-color: transparent;
   box-shadow:
-    inset 4px 4px 4px 0px rgba(0, 0, 0, 0.1),
-    4px 4px 4px 0px rgba(255, 255, 255, 0.4);
+    inset 4px 4px 4px 0px rgba(0, 0, 0, 0.07),
+    4px 4px 4px 0px rgba(255, 255, 255, 0.2);
 }
-
+.itemDescription {
+  color: red !important;
+}
 /* MODAL STYLES */
 
-.content {
+/* .content {
   background-color: #fff;
-}
+} */
 
 .close {
   padding-bottom: 2rem;

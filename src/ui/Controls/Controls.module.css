@@ -19,3 +19,16 @@
   font-size: 3rem;
   stroke-width: 0.5px;
 }
+
+.icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.iconSvg {
+  color: var(--brand-color-1);
+  font-size: 1.5rem;
+  stroke-width: 0.1px;
+}

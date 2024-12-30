@@ -42,7 +42,8 @@ function WizardSecondPart() {
         <label className={styles.fileLabel} htmlFor="description">
           Your location description
         </label>
-        <input
+        <textarea
+          rows={3}
           id="description"
           type="text"
           placeholder="A fresh new place in town...etc"

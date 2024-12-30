@@ -2,8 +2,12 @@ import LoaderError from "../../../ui/LoaderError/LoaderError";
 import Loader from "../../../ui/Loader/Loader";
 import { useNavigate } from "react-router-dom";
 import useGetUser from "../useGetUser";
+import PropTypes from "prop-types";
 import { useEffect } from "react";
 
+ProtectedRoute.propTypes = {
+  children: PropTypes.any,
+};
 function ProtectedRoute({ children }) {
   const navigate = useNavigate();
 
