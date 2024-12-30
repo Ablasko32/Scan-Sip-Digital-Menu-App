@@ -1,0 +1,53 @@
+@import "./MenusCommon.module.css";
+
+.menuHeader {
+  filter: brightness(0.9);
+}
+
+/* MENU INDIVIDUAL ITEMS CATEGORY */
+
+.menuList li {
+  background-color: rgba(255, 255, 255, 0.06);
+  border-left: 0.3px solid blueviolet;
+}
+
+.menuList li:hover {
+  animation: 0.1s glow ease-in-out forwards;
+}
+
+@keyframes glow {
+  0% {
+  }
+  100% {
+    box-shadow:
+      -3px 0px 4px 0px rgba(137, 43, 226, 0.3),
+      -4px 0px 8px 0px rgba(137, 43, 226, 0.2);
+  }
+}
+
+/* CATEGORY INDIVIDUAL ITEM */
+
+.backIcon {
+  stroke: #fff;
+}
+
+.categoryItemsList li {
+  box-shadow: -6px 0 10px 1px rgba(137, 43, 226, 0.2);
+  border-left: 0.5px solid blueviolet;
+}
+
+/* MODAL WINDOW STYLES */
+
+.content {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+}
+
+.closeIcon {
+  color: #fff;
+}
+
+/* POP UP ITEM STYLES */
+.itemViewContainer {
+  background-color: rgba(0, 0, 0, 0.7);
+}

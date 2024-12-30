@@ -13,7 +13,6 @@
 
   text-align: center;
   padding-top: 2rem;
-  filter: brightness(0.9);
 }
 
 .locationName {
@@ -41,16 +40,6 @@
   gap: 3px;
 }
 
-.menuDetails li {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 1.1rem;
-}
-
-.menuList {
-}
-
 /* MENU ITEMS */
 .container {
   padding: 2rem;
@@ -73,14 +62,6 @@
   gap: 2rem;
   overflow: scroll;
   padding-bottom: 2rem !important;
-
-  /* background-color: transparent;
-  margin: 0 3rem;
-  box-shadow:
-    inset 0px 2px 5px rgba(255, 255, 255, 0.1),
-    inset 0px -2px 5px rgba(255, 255, 255, 0.1); */
-  /* border-radius: 5px; */
-
   border-radius: 5px;
   flex: content;
 }
@@ -98,37 +79,14 @@
   align-items: center;
   font-size: 1.5rem;
   font-weight: 600;
-  /* background-color: rgba(255, 255, 255, 0.3); */
   text-transform: capitalize;
   font-size: 1.8rem;
-  /* border-left: 2px solid blueviolet;
-  box-shadow: -2px 0px 6px 0px rgba(137, 43, 226, 0.865); */
   cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.06);
-  border-left: 0.3px solid blueviolet;
   flex-shrink: 0;
   flex-grow: 1;
 }
 
-.menuList li:hover {
-  animation: 0.1s glow ease-in-out forwards;
-}
-
-@keyframes glow {
-  0% {
-  }
-  100% {
-    box-shadow:
-      -3px 0px 4px 0px rgba(137, 43, 226, 0.3),
-      -4px 0px 8px 0px rgba(137, 43, 226, 0.2);
-  }
-}
-
 /* CATEGORY INDIVIDUAL ITEM */
-
-.backIcon {
-  stroke: #fff;
-}
 
 .categoryItemsList {
   background-color: rgba(255, 255, 255, 0.1);
@@ -145,9 +103,7 @@
 
 .categoryItemsList li {
   flex-shrink: 0;
-
   padding-left: 2rem;
-  box-shadow: -6px 0 10px 1px rgba(137, 43, 226, 0.2);
   width: 100%;
   max-width: 50rem;
   display: flex;
@@ -159,7 +115,6 @@
   border-radius: 4px;
   overflow: hidden;
   height: 9rem;
-  border-left: 0.5px solid blueviolet;
   cursor: pointer;
 }
 
@@ -188,18 +143,6 @@
   font-weight: 500;
 }
 
-.goToTop {
-  justify-self: center;
-  margin-top: 1.5rem;
-  margin-bottom: 4rem;
-  background-color: blueviolet;
-  padding: 5px 15px;
-  border-radius: 5px;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
 .itemDescription {
   font-style: italic;
   font-weight: 300;
@@ -222,8 +165,6 @@
 }
 
 .content {
-  background-color: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(15px);
   padding: 3rem;
   padding-top: 2rem;
   border-radius: 5px;
@@ -262,13 +203,8 @@
   cursor: pointer;
 }
 
-.closeIcon {
-  color: #fff;
-}
-
 /* POP UP ITEM STYLES */
 .itemViewContainer {
-  background-color: rgba(0, 0, 0, 0.7);
   width: 100%;
   height: auto;
   display: flex;

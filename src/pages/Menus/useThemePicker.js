@@ -1,5 +1,5 @@
+import neonPurpleStyle from "./MenusNeon.module.css";
 import whiteStyle from "./MenusWhite.module.css";
-import neonPurpleStyle from "./Menus.module.css";
 import { useParams } from "react-router-dom";
 import useLocation from "./useLocation";
 
