@@ -93,7 +93,7 @@ export async function deleteItem(itemID) {
 export async function updateItem(updateData) {
   const itemID = updateData.itemID;
   const rawData = updateData.data;
-  console.log("ITEM UPDATE DATA", itemID, rawData);
+  // console.log("ITEM UPDATE DATA", itemID, rawData);
 
   // IS UPLOADING NEW IMAGE?
   const isUploadingImage = rawData.image.length !== 0;

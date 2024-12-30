@@ -17,6 +17,8 @@ function LocationSettings({ locationData, onClose }) {
     description,
     workingHours,
     address,
+    wifiPassword = null,
+    contact = null,
     id: locationID,
   } = locationData;
 
@@ -25,7 +27,14 @@ function LocationSettings({ locationData, onClose }) {
     handleSubmit,
     formState: { errors },
   } = useForm({
-    defaultValues: { name, description, workingHours, address },
+    defaultValues: {
+      name,
+      description,
+      workingHours,
+      address,
+      wifiPassword,
+      contact,
+    },
   });
 
   const { isSavingSettings, saveSettings } = useSaveLocationSettings();
@@ -108,6 +117,28 @@ function LocationSettings({ locationData, onClose }) {
             <option value="neonPurple">Neon purple</option>
             <option value="whiteMinimalism">White minimalism</option>
           </select>
+        </div>
+        <div className={styles.inputContainer}>
+          <label htmlFor="wifi" className={styles.label}>
+            Wifi password?
+          </label>
+          <input
+            id="wifi"
+            type="text"
+            placeholder="Wifi"
+            {...register("wifiPassword")}
+          />
+        </div>
+        <div className={styles.inputContainer}>
+          <label htmlFor="contact" className={styles.label}>
+            Contact info? (email or phone)
+          </label>
+          <input
+            id="contact"
+            type="text"
+            placeholder="+3859978xx841"
+            {...register("contact")}
+          />
         </div>
 
         <label className={styles.fileLabel} htmlFor="fileImage">

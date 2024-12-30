@@ -53,6 +53,28 @@ function WizardSecondPart() {
           <FormError errMessage={errors.description.message} />
         )}
       </div>
+      <div className={styles.inputContainer}>
+        <label htmlFor="wifi" className={styles.fileLabel}>
+          Wifi password?
+        </label>
+        <input
+          id="wifi"
+          type="text"
+          placeholder="Wifi"
+          {...register("wifiPassword")}
+        />
+      </div>
+      <div className={styles.inputContainer}>
+        <label htmlFor="contact" className={styles.fileLabel}>
+          Contact info? (email or phone)
+        </label>
+        <input
+          id="contact"
+          type="text"
+          placeholder="+3859978xx841"
+          {...register("contact")}
+        />
+      </div>
     </>
   );
 }

@@ -69,7 +69,7 @@ export async function updateLocation(updateData) {
   // console.log(isUploading);
 
   if (isUploading) {
-    console.log("UPLOADING IMAGE");
+    // console.log("UPLOADING IMAGE");
 
     // fetch location image data so it can be deleted later
     const { fetchLocationData, locationError } =

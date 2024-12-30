@@ -7,7 +7,7 @@ export async function loginUser(userData) {
     throw new Error("Invalid email or password");
   }
   if (error) {
-    console.log(error);
+    // console.log(error);
     throw new Error("Error loging in");
   }
 

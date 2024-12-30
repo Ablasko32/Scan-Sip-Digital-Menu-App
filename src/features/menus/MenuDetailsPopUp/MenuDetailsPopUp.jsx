@@ -1,5 +1,7 @@
+import { CiClock1, CiLocationOn, CiWifiOn } from "react-icons/ci";
 import useThemePicker from "../../../pages/Menus/useThemePicker";
-import { CiClock1, CiLocationOn } from "react-icons/ci";
+import { PiCopyLight, PiTelegramLogo } from "react-icons/pi";
+import toast from "react-hot-toast";
 import PropTypes from "prop-types";
 
 MenuDetailsPopUp.propTypes = {
@@ -7,6 +9,15 @@ MenuDetailsPopUp.propTypes = {
 };
 function MenuDetailsPopUp({ locationData }) {
   const styles = useThemePicker();
+
+  async function copyClipboard(type) {
+    await navigator.clipboard.writeText(
+      type === "wifi" ? locationData.wifiPassword : locationData.contact,
+    );
+    toast.success(
+      type === "wifi" ? "Wifi password copied" : "Contact info copied",
+    );
+  }
 
   return (
     <div className={styles.popUpDetailsContainer}>
@@ -22,6 +33,25 @@ function MenuDetailsPopUp({ locationData }) {
         <CiClock1 className={styles.infoIcon} />{" "}
         <p>{locationData.workingHours}</p>
       </div>
+      {locationData.contact && (
+        <div className={styles.infoContainer}>
+          <PiTelegramLogo className={styles.infoIcon} />{" "}
+          <p>{locationData.contact}</p>
+          <button onClick={() => copyClipboard()}>
+            <PiCopyLight className={`${styles.infoIcon}`} />
+          </button>
+        </div>
+      )}
+
+      {locationData.wifiPassword && (
+        <div className={styles.infoContainer}>
+          <CiWifiOn className={styles.infoIcon} />{" "}
+          <p>{locationData.wifiPassword}</p>
+          <button onClick={() => copyClipboard("wifi")}>
+            <PiCopyLight className={`${styles.infoIcon}`} />
+          </button>
+        </div>
+      )}
     </div>
   );
 }

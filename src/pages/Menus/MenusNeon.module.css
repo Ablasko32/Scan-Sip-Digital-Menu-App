@@ -61,3 +61,7 @@
 .infoContainer p {
   color: var(--text-color-secondary);
 }
+
+.infoIcon {
+  color: var(--text-color-main);
+}

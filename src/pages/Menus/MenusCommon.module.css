@@ -266,6 +266,8 @@
 
 /* POP UP DETAILS */
 .popUpDetailsContainer {
+  width: 100%;
+  min-width: 30rem;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;

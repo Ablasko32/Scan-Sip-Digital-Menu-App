@@ -18,7 +18,10 @@ function MenuFooter() {
         Disclaimer VAT
       </p>
       <p>
-        Powered by <span className={styles.menuLogo}>Scan&Sip</span>
+        Powered by{" "}
+        <span className={styles.menuLogo}>
+          <a href={import.meta.env.VITE_SCAN_SIP_POINTER || ""}>Scan&Sip</a>
+        </span>
       </p>
       {isModalOpen && (
         <Modal themeStyle={themeStyles} onClose={handleOpen}>

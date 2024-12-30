@@ -1,7 +1,11 @@
 import useThemePicker from "../../../pages/Menus/useThemePicker.js";
 import formatPrice from "../../../utils/formatPrice.js";
+import PropTypes from "prop-types";
 // import styles from "./MenuItemView.module.css";
 
+MenuItemView.propTypes = {
+  item: PropTypes.object,
+};
 function MenuItemView({ item }) {
   // console.log(item);
 

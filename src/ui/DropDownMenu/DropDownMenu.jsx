@@ -43,7 +43,7 @@ function DropDownMenu({ clickLocation, onClose, itemID, type, editFunction }) {
     editFunction();
     onClose();
 
-    console.log("EDIT CLICKED");
+    // console.log("EDIT CLICKED");
   }
 
   return (

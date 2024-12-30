@@ -1,7 +1,6 @@
-import { CiCircleInfo, CiClock2, CiLocationOn } from "react-icons/ci";
 import MenuDetailsPopUp from "../MenuDetailsPopUp/MenuDetailsPopUp";
 import useThemePicker from "../../../pages/Menus/useThemePicker";
-import { IoShareSocialOutline } from "react-icons/io5";
+import { CiCircleInfo } from "react-icons/ci";
 // import styles from "./MenuHeader.module.css";
 import Modal from "../../../ui/modal/Modal";
 import PropTypes from "prop-types";
