@@ -2,8 +2,14 @@ import styles from "../../categories/AddCategoryForm/AddCategoryForm.module.css"
 import useSaveLocationSettings from "../useSaveLocationSettings";
 import FormError from "../../../ui/FormError/FormError";
 import { useForm } from "react-hook-form";
+import PropTypes from "prop-types";
 
 // import styles from "./LocationSettings.module.css";
+
+LocationSettings.propTypes = {
+  locationData: PropTypes.object,
+  onClose: PropTypes.func,
+};
 
 function LocationSettings({ locationData, onClose }) {
   const {
@@ -37,26 +43,37 @@ function LocationSettings({ locationData, onClose }) {
           <h2>Update location data</h2>
         </div>
         <div>
-          {" "}
+          <label htmlFor="name" className={styles.label}>
+            Location name
+          </label>
           <input
+            id="name"
             type="text"
             placeholder="Category name"
             {...register("name", { required: "Name is required" })}
           />
           {errors?.name && <FormError errMessage={errors.name.message} />}
         </div>
-
-        <input
-          type="text"
-          placeholder="Address"
-          {...register("address", { required: "Address is required" })}
-        />
-        {errors?.address && <FormError errMessage={errors.address.message} />}
-        {/* MUST GO TO TEXT AREA !!! */}
-        <div>
-          {" "}
+        <div className={styles.inputContainer}>
+          <label htmlFor="address" className={styles.label}>
+            Your address
+          </label>
           <input
+            id="address"
             type="text"
+            placeholder="Address"
+            {...register("address", { required: "Address is required" })}
+          />
+          {errors?.address && <FormError errMessage={errors.address.message} />}
+        </div>
+
+        <div className={styles.inputContainer}>
+          <label htmlFor="description" className={styles.label}>
+            Description
+          </label>
+          <textarea
+            id="description"
+            rows={4}
             placeholder="Description"
             {...register("description", {
               required: "Description is required",
@@ -66,9 +83,12 @@ function LocationSettings({ locationData, onClose }) {
             <FormError errMessage={errors.description.message} />
           )}
         </div>
-        <div>
-          {" "}
+        <div className={styles.inputContainer}>
+          <label htmlFor="workHours" className={styles.label}>
+            Working hours
+          </label>
           <input
+            id="workHours"
             type="text"
             placeholder="Working Hours"
             {...register("workingHours", {
@@ -81,6 +101,9 @@ function LocationSettings({ locationData, onClose }) {
         </div>
         {/* MENU THEME */}
         <div className={styles.inputContainer}>
+          <label htmlFor="description" className={styles.label}>
+            Pick a menu theme
+          </label>
           <select {...register("theme")}>
             <option value="neonPurple">Neon purple</option>
             <option value="whiteMinimalism">White minimalism</option>

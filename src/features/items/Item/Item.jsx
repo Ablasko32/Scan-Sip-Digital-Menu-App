@@ -1,13 +1,18 @@
-// import categoryStyles from "../../categories/CategoryItem/CategoryItem.module.css";
 import DropDownMenu from "../../../ui/DropDownMenu/DropDownMenu.jsx";
 import getClickLocation from "../../../utils/getClickLocation.js";
+import clampDescription from "../../../utils/clampDescription.js";
 import AddItemForm from "../AddItemForm/AddItemForm.jsx";
 import formatPrice from "../../../utils/formatPrice.js";
 import Modal from "../../../ui/modal/Modal.jsx";
 import { HiDotsVertical } from "react-icons/hi";
 import { createPortal } from "react-dom";
 import styles from "./Item.module.css";
+import PropTypes from "prop-types";
 import { useState } from "react";
+
+Item.propTypes = {
+  item: PropTypes.object,
+};
 
 function Item({ item }) {
   const [isMenuOpen, setMenuOpen] = useState(false);
@@ -40,12 +45,14 @@ function Item({ item }) {
 
       <div className={styles.itemData}>
         <p className={styles.itemName}>{item.name}</p>
-        <p className={styles.itemDescription}>{item.description}</p>
+        <p className={styles.itemDescription}>
+          {clampDescription(item.description)}
+        </p>
         <p className={styles.itemPrice}>{formatPrice(item.price)}</p>
       </div>
 
       <button onClick={handleOpenMenu} className={styles.itemMenu}>
-        <HiDotsVertical size={20} color="#fff" />
+        <HiDotsVertical size={20} color="rgba(255, 255, 255, 0.87)" />
       </button>
       {isMenuOpen && (
         <DropDownMenu

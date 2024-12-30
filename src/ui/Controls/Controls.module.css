@@ -1,17 +1,21 @@
 .controls {
-  margin-top: 2rem;
   display: flex;
   justify-content: center;
-  /* background-color: bisque; */
   gap: 2rem;
 }
 
 .icon {
-  background-color: blueviolet;
-  padding: 3px;
-  border-radius: 5px;
+  background-color: var(--brand-color-1);
+  padding: 4px;
+  border-radius: var(--border-radius-button);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+}
+
+.controlIcon {
+  color: #fff;
+  font-size: 3rem;
+  stroke-width: 0.5px;
 }

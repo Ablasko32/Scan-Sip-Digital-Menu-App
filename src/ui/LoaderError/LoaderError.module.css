@@ -5,9 +5,9 @@
 }
 
 .error p {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: var(--background-elevation-six);
   padding: 5px 20px;
-  border: 1px solid blueviolet;
+  border: 1px solid var(--brand-color-2);
   border-radius: 5px;
   font-size: 1.5rem;
   display: flex;

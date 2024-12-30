@@ -21,14 +21,16 @@ function Controls() {
   const { data: locationData, isPending: isLoadingLocation } =
     useUserLocationAndCategories(userID);
 
-  if (!locationData) return;
+  if (!locationData)
+    return <p style={{ textAlign: "center" }}>Lets create your menu!</p>;
+
   return (
     <div className={styles.controls}>
       <Link
         to={`/menus/location/${locationData?.id || "demo"}`}
         className={styles.icon}
       >
-        <MdOutlineRemoveRedEye size={30} />
+        <MdOutlineRemoveRedEye size={30} color="rgba(255, 255, 255, 0.87)" />
       </Link>
       {/* generate qr code */}
       <QrCodeButton id={locationData?.id || "demo"} />
@@ -37,7 +39,7 @@ function Controls() {
         onClick={handleOpenSettings}
         className={styles.icon}
       >
-        <CiSettings color="#fff" size={30} />
+        <CiSettings size={30} color="rgba(255, 255, 255, 0.87)" />
       </button>
       {isSettingsOpen && (
         <Modal onClose={handleOpenSettings}>

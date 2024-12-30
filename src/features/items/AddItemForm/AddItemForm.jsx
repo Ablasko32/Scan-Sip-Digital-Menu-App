@@ -5,7 +5,12 @@ import { useParams } from "react-router-dom";
 import useUpdateItem from "../useUpdateItem";
 import { useForm } from "react-hook-form";
 import useSaveItems from "../useSaveItem";
+import PropTypes from "prop-types";
 
+AddItemForm.propTypes = {
+  onClose: PropTypes.func,
+  item: PropTypes.object,
+};
 function AddItemForm({ onClose, item = null }) {
   // IS EDIT OR ADDING SESSION
   const isEditSession = item !== null; //true if edit
@@ -42,20 +47,29 @@ function AddItemForm({ onClose, item = null }) {
       </div>
 
       <div className={styles.inputContainer}>
+        <label htmlFor="name" className={styles.label}>
+          Name
+        </label>
         <input
+          id="name"
           defaultValue={item?.name}
           type="text"
-          placeholder="Item name"
+          placeholder="Name Example"
           {...register("name", { required: "Name is required" })}
         />
         {errors?.name && <FormError errMessage={errors.name.message} />}
       </div>
       <div className={styles.inputContainer}>
-        <input
+        <label htmlFor="description" className={styles.label}>
+          Description
+        </label>
+        <textarea
+          id="description"
+          rows={2}
           defaultValue={item?.description}
           className={addItemStyles.description}
           type="text"
-          placeholder="Item description"
+          placeholder="0.33, Italian"
           {...register("description", {
             maxLength: { value: 70, message: "Description is to long" },
           })}
@@ -65,10 +79,14 @@ function AddItemForm({ onClose, item = null }) {
         )}
       </div>
       <div className={styles.inputContainer}>
+        <label htmlFor="price" className={styles.label}>
+          Price
+        </label>
         <input
+          id="price"
           defaultValue={item?.price}
           type="decimal"
-          placeholder="Item price"
+          placeholder="4.99"
           {...register("price", {
             required: "Price is required",
             validate: (value) => {

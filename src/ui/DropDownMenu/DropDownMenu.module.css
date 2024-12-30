@@ -1,12 +1,9 @@
 .container {
   z-index: 100;
   position: fixed;
-  /* top: 0;
-  bottom: 0; */
-  background-color: rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  border: 0.1px solid blueviolet;
-
+  background-color: var(--background-elevation-six);
+  /* backdrop-filter: blur(5px); */
+  border: 0.1px solid var(--brand-color-1);
   height: 130px;
   width: 50px;
   display: flex;
@@ -15,12 +12,11 @@
   justify-content: center;
   gap: 2rem;
   border-radius: 10px;
-
   animation: 0.3s show ease-in-out;
 }
 
 .container button {
-  color: #fff;
+  color: rgba(255, 255, 255, 0.87);
 }
 
 @keyframes show {

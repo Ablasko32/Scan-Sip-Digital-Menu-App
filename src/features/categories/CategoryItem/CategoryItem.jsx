@@ -6,7 +6,12 @@ import { HiDotsVertical } from "react-icons/hi";
 import styles from "./CategoryItem.module.css";
 import { createPortal } from "react-dom";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 import { useState } from "react";
+
+CategoryItem.propTypes = {
+  item: PropTypes.object,
+};
 
 function CategoryItem({ item }) {
   const [isMenuOpen, setMenuOpen] = useState(false);
@@ -34,8 +39,9 @@ function CategoryItem({ item }) {
       <Link to={`/categories/items/${item.id}`}>
         <p className={styles.categoryName}>{item.name}</p>
       </Link>
+
       <button onClick={handleOpenMenu} className={styles.categoryMenu}>
-        <HiDotsVertical color="#fff" size={20} />
+        <HiDotsVertical color="rgba(255, 255, 255, 0.87)" size={20} />
       </button>
       {isMenuOpen &&
         createPortal(

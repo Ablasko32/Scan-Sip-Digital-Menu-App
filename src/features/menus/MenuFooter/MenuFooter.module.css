@@ -7,10 +7,10 @@
 .menuLogo {
   font-size: 1.5rem;
   font-weight: 500;
-  color: blueviolet;
+  color: var(--brand-color-1);
   padding-left: 2px;
-  border-bottom: 1px solid blueviolet;
-  text-shadow: 1px 1px 4px blueviolet;
+  border-bottom: 1px solid var(--brand-color-1);
+  text-shadow: 2px 2px 4px var(--shadow-subtle-text);
 }
 
 .footerDisclaimer {

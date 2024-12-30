@@ -1,6 +1,29 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 
+:root {
+  --brand-color-1: rgb(115, 42, 184);
+  --brand-color-2: rgb(115, 42, 184, 0.6);
+  --app-background-color: #121212;
+  --background-elevation-one: #1e1e1e;
+  --background-elevation-one-login: rgba(30, 30, 30, 0.4);
+  --background-elevation-two: #222222;
+  --background-elevation-three: #242424;
+  --background-elevation-six: #2c2c2c;
+
+  /* border radius */
+  --border-radius-button: 5px;
+
+  /* text */
+  --text-color-main: rgba(255, 255, 255, 0.87);
+  --text-color-secondary: rgba(255, 255, 255, 0.7);
+
+  /* SHADOW */
+  --shadow-header: rgba(115, 42, 184, 0.6);
+  --shadow-subtle: rgba(115, 42, 184, 0.2);
+  --shadow-subtle-text: rgba(115, 42, 184, 0.3);
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -12,16 +35,8 @@ html {
 }
 
 body {
-  color: #d8d4d4;
-  /* background-image: url("https://img.freepik.com/free-vector/line-luxury-gradient-color-minimalist-style-wave_483537-3945.jpg?ga=GA1.1.1126062350.1734623609&semt=ais_hybrid"); */
-  /* background-image: url("https://img.freepik.com/free-vector/gradient-particle-wave-background_23-2150517324.jpg?ga=GA1.1.1126062350.1734623609&semt=ais_hybrid");
-
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  background-attachment: fixed; */
-  background-color: black;
-  /* font-family: "Open Sans", sans-serif; */
+  color: var(--text-color-main);
+  background-color: var(--app-background-color);
   font-family: "Raleway", sans-serif;
 }
 
@@ -40,8 +55,9 @@ ol {
   list-style: none;
 }
 
-input:focus {
+input:focus,
+textarea:focus {
   outline: none;
-  border-color: blueviolet;
-  box-shadow: 0px 0px 8px 0px blueviolet;
+  border-color: var(--brand-color-1);
+  box-shadow: 0px 0px 8px 0px var(--shadow-header);
 }

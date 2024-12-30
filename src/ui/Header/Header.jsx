@@ -5,7 +5,6 @@ import Modal from "../../ui/modal/Modal";
 import styles from "./Header.module.css";
 import { createPortal } from "react-dom";
 import { Link } from "react-router-dom";
-import Stats from "../Stats/Stats";
 import { useState } from "react";
 
 function Header() {
@@ -30,7 +29,6 @@ function Header() {
         </button>
       </div>
       <div className={styles.controls}>
-        <Stats />
         <Controls />
       </div>
       {isModalOpen &&

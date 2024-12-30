@@ -18,7 +18,7 @@ function Categories() {
       <div className={styles.headerContainer}>
         <h2 className={styles.header}>Categories</h2>
         <button onClick={handleOpenAdd} className={styles.addIcon}>
-          <FiPlus size={20} color="#fff" />
+          <FiPlus className={styles.plusIcon} />
         </button>
       </div>
 

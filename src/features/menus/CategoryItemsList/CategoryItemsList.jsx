@@ -3,13 +3,15 @@ import clampDescription from "../../../utils/clampDescription.js";
 import LoaderError from "../../../ui/LoaderError/LoaderError";
 import useItems from "../../items/ItemsList/useItems.js";
 import formatPrice from "../../../utils/formatPrice.js";
-// import styles from "./CategoryItemsList.module.css";
 import Loader from "../../../ui/Loader/Loader";
 import { useParams } from "react-router-dom";
+import PropTypes from "prop-types";
 
-// import { IoChevronUp } from "react-icons/io5";
+CategoryItemsList.propTypes = {
+  onOpen: PropTypes.func,
+};
 
-function CategoryItemsList({ handleScroll, onOpen }) {
+function CategoryItemsList({ onOpen }) {
   const { category: categoryId } = useParams();
 
   const { itemsData, itemsError, isLoadingItems } = useItems(categoryId);
@@ -46,9 +48,6 @@ function CategoryItemsList({ handleScroll, onOpen }) {
           );
         })}
       </ul>
-      {/* <button onClick={handleScroll} className={styles.goToTop}>
-        <span>Back to Top</span> <IoChevronUp />
-      </button> */}
     </>
   );
 }

@@ -6,8 +6,6 @@ import Loader from "../../ui/Loader/Loader";
 
 import useThemePicker from "./useThemePicker";
 import { useParams } from "react-router-dom";
-// styels neon
-// import styles from "./Menus.module.css";
 import useLocation from "./useLocation";
 
 function Menus() {
@@ -22,7 +20,6 @@ function Menus() {
   // choice of theme
   const styles = useThemePicker();
 
-  // potrebni drugi loaderi! modifakicja ovih!!!
   if (isLoadingLocation) return <Loader fullScreen={true} />;
   if (locationError)
     return <LoaderError fullScreen={true} ErrMessage={locationError.message} />;

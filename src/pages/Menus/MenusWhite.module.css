@@ -31,7 +31,12 @@
 
 /* CATEGORY INDIVIDUAL ITEM */
 
+.categoryItemsList {
+  background-color: transparent;
+}
+
 .categoryItemsList li {
+  background-color: transparent;
   box-shadow:
     inset 4px 4px 4px 0px rgba(0, 0, 0, 0.1),
     4px 4px 4px 0px rgba(255, 255, 255, 0.4);
@@ -53,10 +58,11 @@
 }
 
 .closeIcon {
-  color: black;
+  color: var(--app-background-color);
 }
 
 /* POP UP ITEM STYLES */
 .itemViewContainer {
-  border: 0.5px solid black;
+  border: 0.1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 4px 4px 5px 2px rgba(0, 0, 0, 0.1);
 }

@@ -1,9 +1,18 @@
 import useDeleteCategory from "../../features/categories/useDeleteCategory";
 import useDeleteItem from "../../features/items/useDeleteItem";
 import { IoClose, IoTrashOutline } from "react-icons/io5";
-import { useEffect, useRef, useState } from "react";
 import styles from "./DropDownMenu.module.css";
+import { useEffect, useRef } from "react";
 import { FiEdit2 } from "react-icons/fi";
+import PropTypes from "prop-types";
+
+DropDownMenu.propTypes = {
+  clickLocation: PropTypes.object,
+  onClose: PropTypes.func,
+  itemID: PropTypes.number,
+  type: PropTypes.string,
+  editFunction: PropTypes.func,
+};
 
 function DropDownMenu({ clickLocation, onClose, itemID, type, editFunction }) {
   // const [menuPosition, setMenuPosition] = useState({ x: 0, y: 0 });

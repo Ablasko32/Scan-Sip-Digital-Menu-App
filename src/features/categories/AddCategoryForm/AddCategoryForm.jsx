@@ -5,6 +5,12 @@ import useUpdateCategory from "../useUpdateCategory";
 import styles from "./AddCategoryForm.module.css";
 import useGetUser from "../../auth/useGetUser";
 import { useForm } from "react-hook-form";
+import PropTypes from "prop-types";
+
+AddCategoryForm.propTypes = {
+  onClose: PropTypes.func,
+  item: PropTypes.object,
+};
 
 function AddCategoryForm({ onClose, item = null }) {
   // CHECK IS EDIT SESSION OR ADD SESSION
@@ -47,19 +53,25 @@ function AddCategoryForm({ onClose, item = null }) {
       <div className={styles.header}>
         <h2>{isEditSession ? "Edit category data" : "Add new category"}</h2>
       </div>
+      <div className={styles.inputContainer}>
+        <label htmlFor="name" className={styles.label}>
+          Category name
+        </label>
+        <input
+          id="name"
+          defaultValue={item?.name}
+          type="text"
+          placeholder="Coffe Example One"
+          {...register("name", {
+            required: "The name is required",
+            validate: (value) => {
+              if (value.length < 3) return "Name must be atleast 3 characters";
+            },
+          })}
+        />
+        {errors?.name && <FormError errMessage={errors.name.message} />}
+      </div>
 
-      <input
-        defaultValue={item?.name}
-        type="text"
-        placeholder="Category name"
-        {...register("name", {
-          required: "The name is required",
-          validate: (value) => {
-            if (value.length < 3) return "Name must be atleast 3 characters";
-          },
-        })}
-      />
-      {errors?.name && <FormError errMessage={errors.name.message} />}
       {/* <input type="file" accept="image/*" placeholder="Category name" /> */}
 
       <button

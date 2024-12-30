@@ -1,5 +1,11 @@
 import styles from "./LoaderError.module.css";
 import { GoAlert } from "react-icons/go";
+import PropTypes from "prop-types";
+
+LoaderError.propTypes = {
+  ErrMessage: PropTypes.string,
+  fullScreen: PropTypes.bool,
+};
 
 function LoaderError({ ErrMessage, fullScreen }) {
   return (

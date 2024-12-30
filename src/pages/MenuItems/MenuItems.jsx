@@ -47,7 +47,7 @@ function MenuItems() {
       <CategoryItemsList onOpen={handleOpen} handleScroll={scrollToTop} />
       <MenuFooter />
       {isItemViewOpen && (
-        <Modal onClose={handleOpen}>
+        <Modal themeStyle={styles} onClose={handleOpen}>
           <MenuItemView item={viewedItem} />
         </Modal>
       )}

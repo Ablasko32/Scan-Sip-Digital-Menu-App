@@ -10,13 +10,13 @@
 }
 
 .cardTop {
-  background-color: rgba(137, 43, 226, 0.2);
+  background-color: var(--brand-color-2);
   height: 30%;
   border-top-right-radius: 20px;
   position: relative;
   padding: 2rem;
   backdrop-filter: blur(10px);
-  border: 0.8px solid rgba(255, 255, 255, 0.1);
+  /* border: 0.8px solid rgba(255, 255, 255, 0.1); */
 }
 
 .cardTop h3 {
@@ -27,21 +27,20 @@
   font-size: 1.2rem;
   margin-top: 0.2rem;
   font-weight: 300;
+  color: var(--text-color-secondary);
 }
 
 .cardBottom {
-  background-color: rgba(255, 255, 255, 0.06);
-  border: 0.8px solid blueviolet;
+  background-color: var(--background-elevation-one-login);
+  /* border: 0.8px solid var(--brand-color-1); */
   flex-grow: 1;
   position: relative;
   display: flex;
-
   justify-content: center;
   align-items: center;
   border-bottom-left-radius: 20px;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(20px);
   animation: 0.8s show ease-out;
-
   max-height: 100%;
 }
 
@@ -69,7 +68,7 @@
   font-size: 1.6rem;
   padding: 1rem 1rem;
   background-color: transparent;
-  border: 1px solid rgba(137, 43, 226, 0.5);
+  border: 1px solid var(--brand-color-2);
 
   border-radius: 5px;
 }
@@ -79,7 +78,7 @@
   margin-top: 1rem;
   font-size: 1.5rem;
   font-weight: 600;
-  background-color: rgba(137, 43, 226, 0.3);
+  background-color: var(--brand-color-1);
   text-align: center;
   color: #fff;
   border-radius: 5px;
@@ -104,4 +103,10 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+}
+
+.iconSvg {
+  color: var(--text-color-secondary);
+  font-size: 1.3rem;
+  stroke-width: 0.1px;
 }

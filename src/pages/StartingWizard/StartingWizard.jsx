@@ -66,7 +66,7 @@ function StartingWizard() {
             {step > 1 && (
               <button
                 onClick={(e) => handleStepDown(e)}
-                className={styles.next}
+                className={styles.back}
               >
                 Back
               </button>

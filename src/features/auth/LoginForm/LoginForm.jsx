@@ -1,6 +1,9 @@
-import { PiCoffeeThin, PiPizzaThin } from "react-icons/pi";
+import {
+  LiaCocktailSolid,
+  LiaCoffeeSolid,
+  LiaPizzaSliceSolid,
+} from "react-icons/lia";
 import FormError from "../../../ui/FormError/FormError";
-import { LiaCocktailSolid } from "react-icons/lia";
 import { CiBeerMugFull } from "react-icons/ci";
 import styles from "./LoginForm.module.css";
 import { useForm } from "react-hook-form";
@@ -27,10 +30,10 @@ function LoginForm() {
         <h3>Scan&Sip</h3>
         <p>Welcome to new menu experience</p>
         <div className={styles.icons}>
-          <LiaCocktailSolid size={15} />
-          <CiBeerMugFull size={15} />
-          <PiCoffeeThin size={15} />
-          <PiPizzaThin size={15} />
+          <LiaCocktailSolid className={styles.iconSvg} />
+          <CiBeerMugFull className={styles.iconSvg} />
+          <LiaCoffeeSolid className={styles.iconSvg} />
+          <LiaPizzaSliceSolid className={styles.iconSvg} />
         </div>
       </div>
       <div className={styles.cardBottom}>

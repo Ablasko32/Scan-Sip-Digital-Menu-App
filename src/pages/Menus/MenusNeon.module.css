@@ -7,8 +7,8 @@
 /* MENU INDIVIDUAL ITEMS CATEGORY */
 
 .menuList li {
-  background-color: rgba(255, 255, 255, 0.06);
-  border-left: 0.3px solid blueviolet;
+  background-color: var(--background-elevation-three);
+  border-left: 0.3px solid var(--brand-color-1);
 }
 
 .menuList li:hover {
@@ -20,34 +20,33 @@
   }
   100% {
     box-shadow:
-      -3px 0px 4px 0px rgba(137, 43, 226, 0.3),
-      -4px 0px 8px 0px rgba(137, 43, 226, 0.2);
+      -3px 0px 4px 0px var(--shadow-subtle),
+      -4px 0px 8px 0px var(--shadow-subtle);
   }
 }
 
 /* CATEGORY INDIVIDUAL ITEM */
 
 .backIcon {
-  stroke: #fff;
+  stroke: rgba(255, 255, 255, 0.87);
 }
 
 .categoryItemsList li {
-  box-shadow: -6px 0 10px 1px rgba(137, 43, 226, 0.2);
-  border-left: 0.5px solid blueviolet;
+  box-shadow: -6px 0 10px 1px var(--shadow-subtle);
+  border-left: 0.5px solid var(--brand-color-1);
 }
 
 /* MODAL WINDOW STYLES */
 
 .content {
-  background-color: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(15px);
+  background-color: var(--background-elevation-one);
 }
 
 .closeIcon {
-  color: #fff;
+  color: var(--text-color-main);
 }
 
 /* POP UP ITEM STYLES */
 .itemViewContainer {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: var(--background-elevation-six);
 }

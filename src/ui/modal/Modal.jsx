@@ -1,14 +1,20 @@
-import useThemePicker from "../../pages/Menus/useThemePicker.js";
 import { IoClose } from "react-icons/io5";
 import { useEffect, useRef } from "react";
 import styles from "./Modal.module.css";
+import PropTypes from "prop-types";
 import React from "react";
 
-function Modal({ children, onClose }) {
+Modal.propTypes = {
+  children: PropTypes.any,
+  onClose: PropTypes.func,
+  themeStyle: PropTypes.object,
+};
+
+function Modal({ children, onClose, themeStyle = null }) {
   const modalRef = useRef();
 
-  const themeStyle = useThemePicker();
-  console.log(themeStyle);
+  // const themeStyle = useThemePicker();
+  // console.log(themeStyle);
 
   useEffect(() => {
     document.body.style.overflow = "hidden";
@@ -29,11 +35,17 @@ function Modal({ children, onClose }) {
   }, [modalRef, onClose]);
 
   return (
-    <div ref={modalRef} className={themeStyle.modal || styles.modal}>
-      <div className={themeStyle.content || styles.content}>
-        <button onClick={onClose} className={themeStyle.close || styles.close}>
+    <div
+      ref={modalRef}
+      className={themeStyle ? themeStyle.modal : styles.modal}
+    >
+      <div className={themeStyle ? themeStyle.content : styles.content}>
+        <button
+          onClick={onClose}
+          className={themeStyle ? themeStyle.close : styles.close}
+        >
           <IoClose
-            className={themeStyle.closeIcon || styles.closeIcon}
+            className={themeStyle ? themeStyle.closeIcon : styles.closeIcon}
             size={30}
           />
         </button>

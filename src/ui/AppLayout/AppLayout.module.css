@@ -7,11 +7,9 @@
 .outlet {
   padding: 6rem;
   padding-top: 2rem;
-  /* background-color: yellow; */
   min-height: 100%;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-top-left-radius: 45px;
-  border-top-right-radius: 45px;
-  /* backdrop-filter: blur(50px); */
+  background-color: var(--background-elevation-one);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
   overflow: scroll;
 }

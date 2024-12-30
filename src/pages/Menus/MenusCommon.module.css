@@ -59,7 +59,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  gap: 2rem;
+  gap: 1.5rem;
   overflow: scroll;
   padding-bottom: 2rem !important;
   border-radius: 5px;
@@ -89,7 +89,7 @@
 /* CATEGORY INDIVIDUAL ITEM */
 
 .categoryItemsList {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: var(--background-elevation-one);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -111,7 +111,7 @@
   align-items: center;
   gap: 1rem;
   font-size: 1.1rem;
-  background-color: rgba(255, 255, 255, 0.06);
+  background-color: var(--background-elevation-three);
   border-radius: 4px;
   overflow: hidden;
   height: 9rem;

@@ -22,7 +22,7 @@ function Items() {
       <div className={categoryStyle.headerContainer}>
         <button onClick={() => navigate(-1)}>
           {/* Go back */}
-          <IoChevronBack size={20} color="#fff" />
+          <IoChevronBack size={25} color="rgba(255, 255, 255, 0.87)" />
         </button>
         <h2 className={categoryStyle.header}>Items</h2>
         <button onClick={handleAddOpen} className={categoryStyle.addIcon}>

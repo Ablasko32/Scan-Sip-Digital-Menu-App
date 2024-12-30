@@ -1,33 +1,24 @@
 .listItem {
   max-width: 50rem;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: var(--background-elevation-three);
   width: 100%;
-  border-radius: 3px;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-left: 5rem;
-  position: relative;
-  height: 5rem;
-  border-left: 1px solid blueviolet;
-}
-
-.categoryImg {
-  height: 72px;
-  width: 54px;
-  position: absolute;
-  top: -14px;
-  left: -10px;
-  border-radius: 10px;
-  border: 0.1px solid #fff;
-  object-fit: cover;
+  min-height: 5rem;
+  border-left: 1px solid var(--brand-color-1);
+  padding: 0.5rem 0 0.5rem 5rem;
 }
 
 .categoryMenu {
-  justify-self: flex-end;
   margin-right: 1rem;
+  flex-shrink: 0;
 }
 
 .categoryName {
+  position: relative;
   text-transform: capitalize;
+  flex-grow: 0;
+  line-height: 1;
 }

@@ -5,18 +5,26 @@
   border-radius: 5px;
   gap: 2rem;
   width: 100%;
-  background-color: rgb(37, 37, 37);
+  background-color: var(--background-elevation-six);
 
   padding: 2rem;
 }
 
-.form input {
+.form input,
+textarea {
   font-size: 1.6rem;
   padding: 1rem 1.2rem;
   border-radius: 4px;
   background-color: rgba(255, 255, 255, 0.8);
-  border: 1px solid blueviolet;
+  border: 1px solid var(--brand-color-1);
   width: 100%;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /* add custom arrow later! */
 }
 
 .header {
@@ -31,9 +39,9 @@
   margin-top: 1rem;
   font-size: 1.5rem;
   font-weight: 600;
-  background-color: blueviolet;
+  background-color: var(--brand-color-1);
   text-align: center;
-  color: #fff;
+  color: var(--text-color-main);
   border-radius: 5px;
   text-transform: capitalize;
 }
@@ -48,9 +56,13 @@
 
 .fileLabel {
   align-self: flex-start;
-  background-color: blueviolet;
+  background-color: var(--brand-color-2);
   padding: 1rem 2rem;
   border-radius: 5px;
   font-weight: 600;
   font-size: 1.3rem;
+}
+
+.label {
+  font-size: 1.5rem;
 }

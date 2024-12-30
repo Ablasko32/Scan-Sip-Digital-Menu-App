@@ -5,23 +5,13 @@
   align-items: center;
 }
 
-.loader::before {
-  content: "";
-
-  height: 64px;
-  width: 64px;
-  position: relative;
-  border-radius: 50%;
-}
-
 .loader::after {
   content: "";
   background-color: transparent;
   height: 52px;
   width: 52px;
-  position: absolute;
   border-radius: 50%;
-  border-top: 5px solid blueviolet;
+  border-top: 5px solid var(--brand-color-1);
   animation: spin 2s ease-in-out infinite;
 }
 

@@ -10,7 +10,7 @@ export default function useThemePicker() {
 
   switch (locationData.theme) {
     case "neonPurple":
-      console.log("purple");
+      // console.log("purple");
       return neonPurpleStyle;
     case "whiteMinimalism":
       return whiteStyle;
