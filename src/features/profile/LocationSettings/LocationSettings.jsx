@@ -19,6 +19,7 @@ function LocationSettings({ locationData, onClose }) {
     address,
     wifiPassword = null,
     contact = null,
+    socialLink = null,
     id: locationID,
   } = locationData;
 
@@ -34,6 +35,7 @@ function LocationSettings({ locationData, onClose }) {
       address,
       wifiPassword,
       contact,
+      socialLink,
     },
   });
 
@@ -51,7 +53,7 @@ function LocationSettings({ locationData, onClose }) {
         <div className={styles.header}>
           <h2>Update location data</h2>
         </div>
-        <div>
+        <div className={styles.inputContainer}>
           <label htmlFor="name" className={styles.label}>
             Location name
           </label>
@@ -138,6 +140,18 @@ function LocationSettings({ locationData, onClose }) {
             type="text"
             placeholder="+3859978xx841"
             {...register("contact")}
+          />
+        </div>
+
+        <div className={styles.inputContainer}>
+          <label htmlFor="socialLink" className={styles.label}>
+            Socials link?
+          </label>
+          <input
+            id="socialLink"
+            type="text"
+            placeholder="https://xxxxx"
+            {...register("socialLink")}
           />
         </div>
 

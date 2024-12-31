@@ -4,6 +4,12 @@
   filter: brightness(0.9);
 }
 
+.menuDetails li {
+  color: var(--brand-color-1);
+  font-weight: 500;
+  border-bottom: 0.5px solid var(--brand-color-1);
+  text-shadow: 2px 2px 5px var(--shadow-subtle-text);
+}
 /* MENU INDIVIDUAL ITEMS CATEGORY */
 
 .menuList li {
@@ -64,4 +70,8 @@
 
 .infoIcon {
   color: var(--text-color-main);
+}
+.socialButton {
+  background-color: var(--brand-color-1);
+  color: var(--text-color-primary);
 }

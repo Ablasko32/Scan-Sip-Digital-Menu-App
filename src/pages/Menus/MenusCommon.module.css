@@ -50,6 +50,7 @@
   align-items: center;
   gap: 0.5rem;
   font-size: 1.4rem;
+  font-style: italic;
 }
 
 /* MENU ITEMS */
@@ -262,6 +263,7 @@
 .disclaimer {
   font-size: 1.4rem;
   line-height: 1.5;
+  max-width: 30rem;
 }
 
 /* POP UP DETAILS */
@@ -288,4 +290,18 @@
   color: var(--text-color-primary);
   font-size: 2rem;
   stroke-width: 0.7px;
+}
+.socialButton {
+  width: 12rem;
+  margin: 0 auto;
+  font-size: 1.8rem;
+  border-radius: 5px;
+  padding: 4px 6px;
+  text-align: center;
+  display: block;
+  font-weight: 500;
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }

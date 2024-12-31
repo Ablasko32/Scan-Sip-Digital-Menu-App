@@ -1,4 +1,5 @@
 @import "./MenusCommon.module.css";
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
 
 /* MENU ITEMS */
 .container,
@@ -7,6 +8,20 @@
   background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.25)),
     url("https://images.unsplash.com/photo-1615800098779-1be32e60cca3?q=80&w=1910&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
   color: rgba(0, 0, 0, 0.8);
+}
+
+.locationName {
+  font-family: "Quicksand", serif;
+  font-weight: 400;
+  font-size: 3.2rem;
+  letter-spacing: 2px;
+  line-height: 1.1;
+}
+
+.menuDetails li {
+  font-weight: 500;
+  font-style: italic;
+  border-bottom: 0.2px solid rgba(0, 0, 0, 0.8);
 }
 
 /* MENU INDIVIDUAL ITEMS CATEGORY */
@@ -19,6 +34,12 @@
     inset 3px 3px 5px 0px rgba(0, 0, 0, 0.07),
     3px 3px 7px 0px rgba(255, 255, 255, 0.2);
   transition: all 0.3;
+  font-weight: 500;
+}
+
+.itemPrice {
+  color: rgba(0, 0, 0, 0.9);
+  font-size: 1.4rem;
 }
 
 .menuList li:hover {
@@ -74,4 +95,9 @@
 }
 .infoIcon {
   color: rgba(0, 0, 0, 0.7);
+}
+.socialButton {
+  border: 0.2px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 2px 6px 4px rgba(0, 0, 0, 0.07);
+  background-color: transparent;
 }

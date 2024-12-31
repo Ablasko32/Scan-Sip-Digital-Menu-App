@@ -1,6 +1,7 @@
 import { CiClock1, CiLocationOn, CiWifiOn } from "react-icons/ci";
 import useThemePicker from "../../../pages/Menus/useThemePicker";
 import { PiCopyLight, PiTelegramLogo } from "react-icons/pi";
+import { IoShareSocialOutline } from "react-icons/io5";
 import toast from "react-hot-toast";
 import PropTypes from "prop-types";
 
@@ -51,6 +52,15 @@ function MenuDetailsPopUp({ locationData }) {
             <PiCopyLight className={`${styles.infoIcon}`} />
           </button>
         </div>
+      )}
+      {locationData.socialLink && (
+        <a
+          href={locationData.socialLink ? locationData.socialLink : ""}
+          className={styles.socialButton}
+        >
+          <span>Follow us!</span>
+          <IoShareSocialOutline />
+        </a>
       )}
     </div>
   );

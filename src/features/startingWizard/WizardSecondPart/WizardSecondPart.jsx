@@ -75,6 +75,17 @@ function WizardSecondPart() {
           {...register("contact")}
         />
       </div>
+      <div className={styles.inputContainer}>
+        <label htmlFor="socialLink" className={styles.fileLabel}>
+          Socials link?
+        </label>
+        <input
+          id="socialLink"
+          type="text"
+          placeholder="https://xxxxx"
+          {...register("socialLink")}
+        />
+      </div>
     </>
   );
 }
