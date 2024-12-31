@@ -1,8 +1,15 @@
 import controlStyles from "../Controls/Controls.module.css";
 import { HiOutlineQrCode } from "react-icons/hi2";
+import PropTypes from "prop-types";
 import QRCode from "qrcode";
 
+QrCodeButton.propTypes = {
+  id: PropTypes.number,
+};
 function QrCodeButton({ id }) {
+  const currentUrl = window.location.href.split("/categories")[0];
+  // console.log(currentUrl);
+
   async function generateQrCode() {
     const userAgrees = window.confirm(
       "You are about to generate a QR code,do you want to continiue?",
@@ -10,7 +17,7 @@ function QrCodeButton({ id }) {
     if (userAgrees) {
       try {
         const qrCodeData = await QRCode.toDataURL(
-          `http://192.168.0.17:5173/menus/location/${id}`,
+          `${currentUrl}/menus/location/${id}`,
         );
         if (!qrCodeData) {
           throw new Error("Error generating QR Code");
