@@ -12,6 +12,8 @@ function MenuFooter() {
 
   const themeStyles = useThemePicker();
 
+  const scansipUrl = import.meta.env.VITE_SCAN_SIP_POINTER;
+
   return (
     <footer className={styles.menuFooter}>
       <p onClick={handleOpen} className={styles.footerDisclaimer}>
@@ -20,7 +22,7 @@ function MenuFooter() {
       <p>
         Powered by{" "}
         <span className={styles.menuLogo}>
-          <a href={import.meta.env.VITE_SCAN_SIP_POINTER || ""}>Scan&Sip</a>
+          <a href={scansipUrl || ""}>Scan&Sip</a>
         </span>
       </p>
       {isModalOpen && (
