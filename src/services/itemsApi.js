@@ -69,7 +69,6 @@ export async function deleteItem(itemID) {
   const { data, error } = await getItemById(itemID);
   const image = data.image;
 
-  const imagePath = image.split("/items/")[1].trim();
   // console.log(imagePath);
 
   try {
@@ -80,8 +79,10 @@ export async function deleteItem(itemID) {
     if (error || imgError) {
       throw new Error("Error deleting item");
     }
-
-    await deleteImage("items", imagePath);
+    if (image) {
+      const imagePath = image.split("/items/")[1].trim();
+      await deleteImage("items", imagePath);
+    }
 
     return;
   } catch (error) {
