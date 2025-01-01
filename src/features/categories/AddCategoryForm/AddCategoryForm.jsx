@@ -67,6 +67,10 @@ function AddCategoryForm({ onClose, item = null }) {
             validate: (value) => {
               if (value.length < 3) return "Name must be atleast 3 characters";
             },
+            maxLength: {
+              value: 30,
+              message: "Max lenght of name is 30",
+            },
           })}
         />
         {errors?.name && <FormError errMessage={errors.name.message} />}

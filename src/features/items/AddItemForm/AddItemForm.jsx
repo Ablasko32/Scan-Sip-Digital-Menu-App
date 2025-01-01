@@ -55,7 +55,17 @@ function AddItemForm({ onClose, item = null }) {
           defaultValue={item?.name}
           type="text"
           placeholder="Name Example"
-          {...register("name", { required: "Name is required" })}
+          {...register("name", {
+            required: "Name is required",
+            maxLength: {
+              value: 30,
+              message: "Max lenght of name is 30",
+            },
+            minLength: {
+              value: 3,
+              message: "Name must be atleast 3 characters",
+            },
+          })}
         />
         {errors?.name && <FormError errMessage={errors.name.message} />}
       </div>

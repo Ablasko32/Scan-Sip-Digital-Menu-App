@@ -20,6 +20,7 @@ function LocationSettings({ locationData, onClose }) {
     wifiPassword = null,
     contact = null,
     socialLink = null,
+    theme = null,
     id: locationID,
   } = locationData;
 
@@ -36,6 +37,7 @@ function LocationSettings({ locationData, onClose }) {
       wifiPassword,
       contact,
       socialLink,
+      theme,
     },
   });
 
@@ -61,7 +63,10 @@ function LocationSettings({ locationData, onClose }) {
             id="name"
             type="text"
             placeholder="Category name"
-            {...register("name", { required: "Name is required" })}
+            {...register("name", {
+              required: "Name is required",
+              maxLength: { value: 37, message: "Max lenght of name is 37" },
+            })}
           />
           {errors?.name && <FormError errMessage={errors.name.message} />}
         </div>
@@ -73,7 +78,17 @@ function LocationSettings({ locationData, onClose }) {
             id="address"
             type="text"
             placeholder="Address"
-            {...register("address", { required: "Address is required" })}
+            {...register("address", {
+              required: "Address is required",
+              maxLength: {
+                value: 40,
+                message: "Max lenght of address is 40",
+              },
+              minLength: {
+                value: 5,
+                message: "Addres too short",
+              },
+            })}
           />
           {errors?.address && <FormError errMessage={errors.address.message} />}
         </div>
@@ -88,6 +103,14 @@ function LocationSettings({ locationData, onClose }) {
             placeholder="Description"
             {...register("description", {
               required: "Description is required",
+              maxLength: {
+                value: 130,
+                message: "Max lenght of description is 130",
+              },
+              minLength: {
+                value: 15,
+                message: "Description too short",
+              },
             })}
           />
           {errors?.description && (
@@ -104,10 +127,14 @@ function LocationSettings({ locationData, onClose }) {
             placeholder="Working Hours"
             {...register("workingHours", {
               required: "Working hours are required",
+              maxLength: {
+                value: 35,
+                message: "Max lenght of working hours is 35",
+              },
             })}
           />
           {errors?.workingHours && (
-            <FormError errMessage={errors.description.workingHours} />
+            <FormError errMessage={errors.description.message} />
           )}
         </div>
         {/* MENU THEME */}
@@ -128,8 +155,16 @@ function LocationSettings({ locationData, onClose }) {
             id="wifi"
             type="text"
             placeholder="Wifi"
-            {...register("wifiPassword")}
+            {...register("wifiPassword", {
+              maxLength: {
+                value: 30,
+                message: "Max lenght of wifi password is 30",
+              },
+            })}
           />
+          {errors?.wifiPassword && (
+            <FormError errMessage={errors.wifiPassword.message} />
+          )}
         </div>
         <div className={styles.inputContainer}>
           <label htmlFor="contact" className={styles.label}>
@@ -139,8 +174,14 @@ function LocationSettings({ locationData, onClose }) {
             id="contact"
             type="text"
             placeholder="+3859978xx841"
-            {...register("contact")}
+            {...register("contact", {
+              maxLength: {
+                value: 50,
+                message: "Max lenght of contact info is 50",
+              },
+            })}
           />
+          {errors?.contact && <FormError errMessage={errors.contact.message} />}
         </div>
 
         <div className={styles.inputContainer}>

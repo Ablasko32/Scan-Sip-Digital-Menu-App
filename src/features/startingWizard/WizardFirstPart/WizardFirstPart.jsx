@@ -20,7 +20,10 @@ function WizardFirstPart() {
           id="name"
           type="text"
           placeholder="Coffe Example"
-          {...register("name", { required: "Name is required" })}
+          {...register("name", {
+            required: "Name is required",
+            maxLength: { value: 37, message: "Max lenght of name is 37" },
+          })}
         />
         {errors?.name && <FormError errMessage={errors.name.message} />}
         {errors?.image && <FormError errMessage={errors.image.message} />}
