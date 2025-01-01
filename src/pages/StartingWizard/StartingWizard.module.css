@@ -34,7 +34,7 @@
 }
 
 .stepNumbers div {
-  z-index: 100;
+  z-index: 2;
   background-color: var(--app-background-color);
   border: 2px solid var(--brand-color-1);
   font-size: 2rem;
