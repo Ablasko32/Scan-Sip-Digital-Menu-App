@@ -10,7 +10,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
+  gap: 1.3rem;
   border-radius: 10px;
   animation: 0.3s show ease-in-out;
 }

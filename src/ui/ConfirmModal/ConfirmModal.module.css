@@ -1,0 +1,51 @@
+.confirmContainer {
+  height: 100dvh;
+  width: 100%;
+  display: flex;
+  z-index: 999;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  inset: 0 0 0 0;
+  background-color: #1816161a;
+  backdrop-filter: blur(5px);
+}
+
+.confirmContainer p {
+  font-size: 1.6rem;
+}
+
+.confirm {
+  background-color: var(--background-elevation-six);
+  padding: 2rem;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+button {
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-weight: 600;
+  color: var(--text-color-main);
+  font-size: 1.8rem;
+}
+
+.confirmButton {
+  /* background-color: green; */
+  border: 1px solid green;
+}
+
+.cancelButton {
+  border: 1px solid red;
+  /* background-color: red; */
+}

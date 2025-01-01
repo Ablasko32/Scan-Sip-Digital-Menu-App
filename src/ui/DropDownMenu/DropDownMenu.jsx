@@ -1,8 +1,9 @@
 import useDeleteCategory from "../../features/categories/useDeleteCategory";
 import useDeleteItem from "../../features/items/useDeleteItem";
 import { IoClose, IoTrashOutline } from "react-icons/io5";
+import ConfirmModal from "../ConfirmModal/ConfirmModal";
+import { useEffect, useRef, useState } from "react";
 import styles from "./DropDownMenu.module.css";
-import { useEffect, useRef } from "react";
 import { FiEdit2 } from "react-icons/fi";
 import PropTypes from "prop-types";
 
@@ -22,20 +23,51 @@ function DropDownMenu({ clickLocation, onClose, itemID, type, editFunction }) {
     useDeleteCategory();
   const { isPending: isDeletingItem, mutate: deleteItem } = useDeleteItem();
 
+  const [isConfirmOpen, setConfirmOpen] = useState(false);
+
   const menuRef = useRef();
+  const modalRef = useRef();
+
   useEffect(() => {
     function closeMenu(e) {
       if (!menuRef.current) return;
-      if (!menuRef.current.contains(e.target) || !menuRef.current) onClose();
+
+      // if there is no modal ref i check if click is outside menu and then close
+      if (!modalRef.current) {
+        if (!menuRef.current.contains(e.target)) {
+          // console.log("CLICK OUTSIDE MENU");
+          onClose();
+        }
+      }
+
+      // if there is modal ref i check if click is outside both
+      if (
+        modalRef.current &&
+        !menuRef.current.contains(e.target) &&
+        !modalRef.current.contains(e.target)
+      ) {
+        // console.log("CLICK OUTSIDE BOTH MENU AND MODAL");
+        onClose();
+      }
     }
 
+    // Add event listener for click event
     document.addEventListener("click", closeMenu, true);
 
+    // Cleanup event listener on component unmount
     return () => document.removeEventListener("click", closeMenu);
-  }, [menuRef, onClose]);
+  }, [menuRef, onClose, modalRef]);
 
-  function handleClick() {
-    if (!window.confirm("Are you sure you want to continiue?")) return;
+  function handleOpenConfirm() {
+    setConfirmOpen(true);
+  }
+  function handleCloseConfirm() {
+    setConfirmOpen(false);
+  }
+
+  function handleDelete() {
+    // if (!window.confirm("Are you sure you want to continiue?")) return;
+    // console.log("im DELETING");
     type === "items" ? deleteItem(itemID) : deleteCategory(itemID);
   }
 
@@ -47,24 +79,34 @@ function DropDownMenu({ clickLocation, onClose, itemID, type, editFunction }) {
   }
 
   return (
-    <div
-      ref={menuRef}
-      className={styles.container}
-      style={{ top: `${clickLocation.y}px`, right: `${clickLocation.x}px` }}
-    >
-      <button onClick={handleOpenEdit}>
-        <FiEdit2 size={17} />
-      </button>
-      <button
-        disabled={isDeletingCategory || isDeletingItem}
-        onClick={handleClick}
+    <>
+      <div
+        ref={menuRef}
+        className={styles.container}
+        style={{ top: `${clickLocation.y}px`, right: `${clickLocation.x}px` }}
       >
-        <IoTrashOutline size={17} />
-      </button>
-      <button onClick={onClose}>
-        <IoClose size={20} />
-      </button>
-    </div>
+        <button onClick={handleOpenEdit}>
+          <FiEdit2 size={17} />
+        </button>
+        <button
+          disabled={isDeletingCategory || isDeletingItem}
+          onClick={handleOpenConfirm}
+        >
+          <IoTrashOutline size={17} />
+        </button>
+        <button onClick={onClose}>
+          <IoClose size={20} />
+        </button>
+      </div>
+      {isConfirmOpen && (
+        <ConfirmModal
+          ref={modalRef}
+          onCancel={handleCloseConfirm}
+          message="Are you sure you want to delete?"
+          onConfirm={handleDelete}
+        />
+      )}
+    </>
   );
 }
 
