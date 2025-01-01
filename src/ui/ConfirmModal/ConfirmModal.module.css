@@ -42,10 +42,10 @@ button {
 
 .confirmButton {
   /* background-color: green; */
-  border: 1px solid green;
+  border: 0.5px solid rgb(36, 158, 36);
 }
 
 .cancelButton {
-  border: 1px solid red;
+  border: 0.5px solid rgb(183, 39, 39);
   /* background-color: red; */
 }
