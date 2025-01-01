@@ -11,5 +11,7 @@
   background-color: var(--background-elevation-one);
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-  overflow: scroll;
+  overflow-y: scroll;
+  scrollbar-color: var(--brand-color-1) rgba(255, 255, 255, 0.281);
+  scrollbar-width: thin;
 }
