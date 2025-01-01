@@ -6,7 +6,7 @@
 .menu,
 .content {
   background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.25)),
-    url("https://images.unsplash.com/photo-1615800098779-1be32e60cca3?q=80&w=1910&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    url("/papper-bg.jpg");
   color: rgba(0, 0, 0, 0.8);
 }
 
@@ -18,8 +18,8 @@
   line-height: 1.1;
 }
 
-.menuDetails li {
-  font-weight: 500;
+.menuDetails li span {
+  font-weight: 700;
   font-style: italic;
   border-bottom: 0.2px solid rgba(0, 0, 0, 0.8);
 }
@@ -97,7 +97,7 @@
   color: rgba(0, 0, 0, 0.7);
 }
 .socialButton {
-  border: 0.2px solid rgba(0, 0, 0, 0.1);
-  box-shadow: 2px 2px 6px 4px rgba(0, 0, 0, 0.07);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  /* box-shadow: 2px 2px 6px 4px rgba(0, 0, 0, 0.07); */
   background-color: transparent;
 }

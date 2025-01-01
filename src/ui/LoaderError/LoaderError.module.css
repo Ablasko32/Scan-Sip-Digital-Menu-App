@@ -5,7 +5,7 @@
 }
 
 .error p {
-  background-color: var(--background-elevation-six);
+  background-color: transparent;
   padding: 5px 20px;
   border: 1px solid var(--brand-color-2);
   border-radius: 5px;

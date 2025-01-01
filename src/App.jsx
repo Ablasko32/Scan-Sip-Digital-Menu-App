@@ -12,6 +12,7 @@ import ProtectedRoute from "./features/auth/ProtectedRoute/ProtectedRoute";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import StartingWizard from "./pages/StartingWizard/StartingWizard";
 import Categories from "./pages/Categories/Categories";
+import NotFound from "./pages/NotFound/NotFound";
 // import MenuItems from "./pages/MenuItems/MenuItems";
 // import AppLayout from "./ui/AppLayout/AppLayout";
 import { IoCheckmark } from "react-icons/io5";
@@ -53,6 +54,7 @@ function App() {
               path="/menus/location/:id/:category"
               element={<MenuItems />}
             />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
       </Router>

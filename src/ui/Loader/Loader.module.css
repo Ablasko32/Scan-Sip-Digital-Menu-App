@@ -11,7 +11,9 @@
   height: 52px;
   width: 52px;
   border-radius: 50%;
+  border: 5px solid rgb(115, 42, 184, 0.3);
   border-top: 5px solid var(--brand-color-1);
+
   animation: spin 2s ease-in-out infinite;
 }
 
