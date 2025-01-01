@@ -8,7 +8,7 @@ const ConfirmModal = forwardRef(function ConfirmModal(
   ref,
 ) {
   function handleConfirm() {
-    console.log("IM IN MODAL CONFIRM");
+    // console.log("IM IN MODAL CONFIRM");
     onConfirm();
     onCancel();
   }

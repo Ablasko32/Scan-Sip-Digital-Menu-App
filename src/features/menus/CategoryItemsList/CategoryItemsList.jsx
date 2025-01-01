@@ -17,6 +17,7 @@ function CategoryItemsList({ onOpen }) {
   const { itemsData, itemsError, isLoadingItems } = useItems(categoryId);
 
   const styles = useThemePicker();
+  // console.log(styles);
 
   if (isLoadingItems) return <Loader />;
 
