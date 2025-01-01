@@ -3,6 +3,7 @@
   "short_name": "Scan&Sip",
   "display": "standalone",
   "background_color": "#121212",
+  "theme_color": "#121212",
   "start_url": "/",
   "description": "Create digital menus for cafe bars,restaurants and more!",
 
