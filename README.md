@@ -95,5 +95,7 @@ Scan&Sip is a **Mobile-first digital menu solution** designed for cafes, bars, a
 
 <p align="center">
   <img src="./images/menulight1.png" alt="App" height="250" style="margin-right: 10px;" />
+  <img src="./images/lightpopup1.png" alt="App" height="250" style="margin-right: 10px;" />
   <img src="./images/menulight2.png" alt="Wizard" height="250" />
+   <img src="./images/lightpopup1.png" alt="App" height="250" style="margin-right: 10px;" />
 </p>
