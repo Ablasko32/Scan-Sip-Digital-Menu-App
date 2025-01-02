@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="Images/banner1.png" alt="Scan&Sip Logo" width="100%" height="280" />
+  <img src="./Images/banner1.png" alt="Scan&Sip Logo" width="100%" height="280" />
 </p>
 
 <h1 align="center">Scan&Sip - A Digital Menu App :memo:</h1>
@@ -60,7 +60,7 @@ Scan&Sip is a **Mobile-first digital menu solution** designed for cafes, bars, a
 - [View Demo](https://scan-sip.vercel.app/menus/location/29)
 
 <p align="center">
-  <img src="Images/qrdark.png" alt="Dark Theme QR" width="150" />
+  <img src="./Images/qrdark.png" alt="Dark Theme QR" width="150" />
 </p>
 
 ### Light Theme
@@ -68,7 +68,7 @@ Scan&Sip is a **Mobile-first digital menu solution** designed for cafes, bars, a
 - [View Demo](https://scan-sip.vercel.app/menus/location/28)
 
 <p align="center">
-  <img src="Images/qrlight.png" alt="Light Theme QR" width="150" />
+  <img src="./Images/qrlight.png" alt="Light Theme QR" width="150" />
 </p>
 
 ### Full App
@@ -78,22 +78,22 @@ Scan&Sip is a **Mobile-first digital menu solution** designed for cafes, bars, a
 ## App Images
 
 <p align="center">
-  <img src="Images/app1.png" alt="App" height="300" style="margin-right: 10px;" />
-  <img src="Images/app2.png" alt="Wizard" height="300" />
+  <img src="./Images/app1.png" alt="App" height="300" style="margin-right: 10px;" />
+  <img src="./Images/app2.png" alt="Wizard" height="300" />
 </p>
 
 ### Dark Theme Menus
 
 <p align="center">
-  <img src="Images/menudark1.png" alt="App" height="250" style="margin-right: 10px;" />
-  <img src="Images/menudark2.png" alt="Wizard" height="250" />
-   <img src="Images/itemsdark1.png" alt="App" height="250" style="margin-right: 10px;" />
-  <img src="Images/itemsdark2.png" alt="Wizard" height="250" />
+  <img src="./Images/menudark1.png" alt="App" height="250" style="margin-right: 10px;" />
+  <img src="./Images/menudark2.png" alt="Wizard" height="250" />
+   <img src="./Images/itemsdark1.png" alt="App" height="250" style="margin-right: 10px;" />
+  <img src="./Images/itemsdark2.png" alt="Wizard" height="250" />
 </p>
 
 ### Light Theme Menus
 
 <p align="center">
-  <img src="Images/menulight1.png" alt="App" height="250" style="margin-right: 10px;" />
-  <img src="Images/menulight2.png" alt="Wizard" height="250" />
+  <img src="./Images/menulight1.png" alt="App" height="250" style="margin-right: 10px;" />
+  <img src="./Images/menulight2.png" alt="Wizard" height="250" />
 </p>
