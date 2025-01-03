@@ -107,6 +107,17 @@ function AddItemForm({ onClose, item = null }) {
         />
         {errors?.price && <FormError errMessage={errors.price.message} />}
       </div>
+      {isEditSession && (
+        <div className={styles.inputContainer}>
+          <label htmlFor="isSold" className={styles.label}>
+            Is item sold out?
+          </label>
+          <select defaultValue={false} id="isSold" {...register("isSold")}>
+            <option value={false}>No</option>
+            <option value={true}>Yes</option>
+          </select>
+        </div>
+      )}
       <label className={styles.fileLabel} htmlFor="fileImage">
         Upload image
       </label>

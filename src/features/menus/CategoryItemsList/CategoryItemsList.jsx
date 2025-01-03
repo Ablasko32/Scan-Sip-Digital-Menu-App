@@ -38,11 +38,13 @@ function CategoryItemsList({ onOpen }) {
                   {" "}
                   {clampDescription(item.description)}
                 </p>
-                <p className={styles.itemPrice}>{formatPrice(item.price)}</p>
+                <p className={styles.itemPrice}>
+                  {item.isSold ? "Out of stock" : formatPrice(item.price)}
+                </p>
               </div>
               {item.image ? (
                 <img
-                  className={styles.itemImg}
+                  className={`${styles.itemImg} ${item.isSold ? styles.soldOutImage : ""}`}
                   src={item.image}
                   alt="Image of item that can be ordered"
                 />

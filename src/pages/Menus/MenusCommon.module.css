@@ -173,6 +173,10 @@
   font-weight: 300;
 }
 
+.soldOutImage {
+  filter: opacity(70%);
+}
+
 /* MODAL WINDOW STYLES */
 .modal {
   position: fixed;
