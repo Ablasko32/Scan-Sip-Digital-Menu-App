@@ -21,4 +21,9 @@
   text-transform: capitalize;
   flex-grow: 0;
   line-height: 1;
+  transition: all 0.2s;
+}
+
+.categoryName:hover {
+  border-bottom: 2px solid var(--brand-color-1);
 }

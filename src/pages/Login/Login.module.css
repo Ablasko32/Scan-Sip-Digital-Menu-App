@@ -5,7 +5,7 @@
   height: 100dvh;
 }
 
-.loginContainer::after {
+/* .loginContainer::after {
   content: "";
   height: 100dvh;
   width: 2rem;
@@ -45,4 +45,4 @@
   80% {
     filter: blur(45px);
   }
-}
+} */

@@ -41,7 +41,11 @@ function CategoryItemsList({ onOpen }) {
                 <p className={styles.itemPrice}>{formatPrice(item.price)}</p>
               </div>
               {item.image ? (
-                <img className={styles.itemImg} src={item.image} />
+                <img
+                  className={styles.itemImg}
+                  src={item.image}
+                  alt="Image of item that can be ordered"
+                />
               ) : (
                 <div></div>
               )}

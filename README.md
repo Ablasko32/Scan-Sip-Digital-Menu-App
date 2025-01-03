@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./images/banner1.png" alt="Scan&Sip Logo" width="100%" height="280" />
+  <img src="./images/banner1.png" alt="Scan&Sip Logo" width="100%"  />
 </p>
 
 <h1 align="center">Scan&Sip - A Digital Menu App :memo:</h1>
@@ -10,7 +10,7 @@
   <img src="https://img.shields.io/badge/Status-Live-brightgreen" alt="Status">
 </p>
 
-Welcome to Scan&Sip! May I be your menu guide!
+<p align="center">Welcome to Scan&Sip! May I be your menu guide!</p>
 
 ## About
 
@@ -53,28 +53,6 @@ Scan&Sip is a **Mobile-first digital menu solution** designed for cafes, bars, a
 
 - Guided setup for new users.
 
-## Live Demo
-
-### Dark Theme
-
-- [View Demo](https://scan-sip.vercel.app/menus/location/29)
-
-<p align="center">
-  <img src="./images/qrdark.png" alt="Dark Theme QR" width="150" />
-</p>
-
-### Light Theme
-
-- [View Demo](https://scan-sip.vercel.app/menus/location/28)
-
-<p align="center">
-  <img src="./images/qrlight.png" alt="Light Theme QR" width="150" />
-</p>
-
-### Full App
-
-- [Try the App](https://scan-sip.vercel.app/)
-
 ## App images
 
 <p align="center">
@@ -99,3 +77,39 @@ Scan&Sip is a **Mobile-first digital menu solution** designed for cafes, bars, a
   <img src="./images/menulight2.png" alt="Wizard" height="250" />
    <img src="./images/lightpopup2.png" alt="App" height="250" style="margin-right: 10px;" />
 </p>
+
+## Live Demo
+
+#### Dark Theme
+
+- [View Demo](https://scan-sip.vercel.app/menus/location/29)
+
+<p align="center">
+  <img src="./images/qrdark.png" alt="Dark Theme QR" width="150" />
+</p>
+
+#### Light Theme
+
+- [View Demo](https://scan-sip.vercel.app/menus/location/28)
+
+<p align="center">
+  <img src="./images/qrlight.png" alt="Light Theme QR" width="150" />
+</p>
+
+#### Full App
+
+- [Try the App](https://scan-sip.vercel.app/)
+
+## Database
+
+<img src="./images/db.png" width="100%"/>
+
+For detailed information about the database structure and relationships, refer to the diagram above.
+
+## LICENCE
+
+This software is proprietary and all rights are reserved by the author.
+
+Copyright © 2025 Antonio Blašković
+
+> Unauthorized use, distribution, or modification of this software is prohibited. Please refer to the full licensing terms in the LICENSE file for more information.

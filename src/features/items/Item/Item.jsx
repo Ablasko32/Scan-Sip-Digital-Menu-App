@@ -38,7 +38,11 @@ function Item({ item }) {
   return (
     <li className={` ${styles.listItem}`}>
       {item.image ? (
-        <img className={styles.categoryImg} src={item.image} />
+        <img
+          className={styles.categoryImg}
+          src={item.image}
+          alt="Image of item"
+        />
       ) : (
         <div></div>
       )}

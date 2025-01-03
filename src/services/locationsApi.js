@@ -141,27 +141,31 @@ export async function addNewLocation(locationData) {
   // console.log("LOCATION DATA", locationData);
 
   const image = locationData.image[0];
+  try {
+    const { imgData, imgError, urlPath } = await uploadImage(
+      "locations",
+      image,
+      0.8,
+      1500,
+    );
 
-  const { imgData, imgError, urlPath } = await uploadImage(
-    "locations",
-    image,
-    0.8,
-    1500,
-  );
+    if (!imgData || imgError) {
+      throw new Error("Error uploading image");
+    }
 
-  if (!imgData || imgError) {
-    throw new Error("Error uploading image");
-  }
+    const { data, error } = await supabase
+      .from("location")
+      .insert({ ...locationData, image: urlPath })
+      .select()
+      .single(); //placeholder for image
+    if (error) {
+      throw new Error("Error creating location");
+    }
+    // console.log("CREATED DATA", data);
 
-  const { data, error } = await supabase
-    .from("location")
-    .insert({ ...locationData, image: urlPath })
-    .select()
-    .single(); //placeholder for image
-  if (error) {
+    return data;
+  } catch (err) {
+    console.error(err.message);
     throw new Error("Error creating location");
   }
-  // console.log("CREATED DATA", data);
-
-  return data;
 }

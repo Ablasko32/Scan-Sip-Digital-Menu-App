@@ -14,12 +14,13 @@ function MenuItemView({ item }) {
   return (
     <div className={styles.itemViewContainer}>
       {item.image ? (
-        <img className={styles.itemViewImage} src={item.image} />
-      ) : (
         <img
           className={styles.itemViewImage}
-          src="https://images.unsplash.com/photo-1629022194335-b2eca031e320?q=80&w=1925&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        ></img>
+          src={item.image}
+          alt="Zoomed in photo of the item"
+        />
+      ) : (
+        <div className={styles.filler}></div>
       )}
 
       <div>
