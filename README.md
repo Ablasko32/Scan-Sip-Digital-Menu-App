@@ -104,6 +104,8 @@ Scan&Sip is a **Mobile-first digital menu solution** designed for cafes, bars, a
 
 - [Try the App](https://scan-sip.vercel.app/)
 
+  > For test user account please contact the Author
+
 ## Database
 
 <img src="./images/db.png" width="100%"/>
