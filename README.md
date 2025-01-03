@@ -49,7 +49,7 @@ Scan&Sip is a **Mobile-first digital menu solution** designed for cafes, bars, a
 
 - Toggle between light and dark themes.
 
-✔️ Item Availability Management
+✔️ **Item Availability Management**
 
 - Easily mark items as sold out to prevent customers from ordering unavailable items.
 
