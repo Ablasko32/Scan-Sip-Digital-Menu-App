@@ -33,7 +33,9 @@ function CategoryItemsList({ onOpen }) {
           return (
             <li onClick={() => onOpen(item)} key={item.id}>
               <div>
-                <h3>{item.name}</h3>
+                <h3 className={item.isSold ? styles.soldTitle : ""}>
+                  {item.name}
+                </h3>
                 <p className={styles.items}>
                   {" "}
                   {clampDescription(item.description)}

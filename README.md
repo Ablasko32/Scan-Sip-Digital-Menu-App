@@ -49,6 +49,10 @@ Scan&Sip is a **Mobile-first digital menu solution** designed for cafes, bars, a
 
 - Toggle between light and dark themes.
 
+✔️ Item Availability Management
+
+- Easily mark items as sold out to prevent customers from ordering unavailable items.
+
 ✔️ **Onboarding Wizard**
 
 - Guided setup for new users.
@@ -103,6 +107,8 @@ Scan&Sip is a **Mobile-first digital menu solution** designed for cafes, bars, a
 ## Database
 
 <img src="./images/db.png" width="100%"/>
+
+Database type: PostgreSQL
 
 For detailed information about the database structure and relationships, refer to the diagram above.
 
