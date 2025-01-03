@@ -31,7 +31,7 @@ function CategoryItemsList({ onOpen }) {
       <ul className={styles.categoryItemsList}>
         {itemsData.map((item) => {
           return (
-            <li onClick={() => onOpen(item)} key={item.id}>
+            <li onClick={() => !item.isSold && onOpen(item)} key={item.id}>
               <div>
                 <h3 className={item.isSold ? styles.soldTitle : ""}>
                   {item.name}
